@@ -13,6 +13,9 @@
 		262EA5C32C55387B00162FC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262EA5C12C55387B00162FC0 /* Main.storyboard */; };
 		262EA5C52C55387C00162FC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 262EA5C42C55387C00162FC0 /* Assets.xcassets */; };
 		262EA5C82C55387C00162FC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262EA5C62C55387C00162FC0 /* LaunchScreen.storyboard */; };
+		2699BD7C2C6505ED00CB3DF0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2699BD7B2C6505ED00CB3DF0 /* HomeViewController.swift */; };
+		2699BD832C6506F300CB3DF0 /* HomeVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2699BD812C6506F300CB3DF0 /* HomeVideoCell.swift */; };
+		2699BD842C6506F300CB3DF0 /* HomeVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2699BD822C6506F300CB3DF0 /* HomeVideoCell.xib */; };
 		26B3C7AA2C5FC4AE0045A050 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26B3C7A92C5FC4AE0045A050 /* Color.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +28,9 @@
 		262EA5C42C55387C00162FC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		262EA5C72C55387C00162FC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		262EA5C92C55387C00162FC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2699BD7B2C6505ED00CB3DF0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2699BD812C6506F300CB3DF0 /* HomeVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVideoCell.swift; sourceTree = "<group>"; };
+		2699BD822C6506F300CB3DF0 /* HomeVideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVideoCell.xib; sourceTree = "<group>"; };
 		26B3C7A92C5FC4AE0045A050 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,9 +64,10 @@
 		262EA5BA2C55387B00162FC0 /* KTV */ = {
 			isa = PBXGroup;
 			children = (
+				2699BD7A2C6505DF00CB3DF0 /* Home */,
+				2699BD7D2C65069700CB3DF0 /* Login */,
 				262EA5BB2C55387B00162FC0 /* AppDelegate.swift */,
 				262EA5BD2C55387B00162FC0 /* SceneDelegate.swift */,
-				262EA5BF2C55387B00162FC0 /* LoginViewController.swift */,
 				262EA5C12C55387B00162FC0 /* Main.storyboard */,
 				26B3C7A92C5FC4AE0045A050 /* Color.xcassets */,
 				262EA5C42C55387C00162FC0 /* Assets.xcassets */,
@@ -68,6 +75,32 @@
 				262EA5C92C55387C00162FC0 /* Info.plist */,
 			);
 			path = KTV;
+			sourceTree = "<group>";
+		};
+		2699BD7A2C6505DF00CB3DF0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2699BD7E2C6506B700CB3DF0 /* Cell */,
+				2699BD7B2C6505ED00CB3DF0 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2699BD7D2C65069700CB3DF0 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				262EA5BF2C55387B00162FC0 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		2699BD7E2C6506B700CB3DF0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2699BD812C6506F300CB3DF0 /* HomeVideoCell.swift */,
+				2699BD822C6506F300CB3DF0 /* HomeVideoCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +164,7 @@
 				262EA5C82C55387C00162FC0 /* LaunchScreen.storyboard in Resources */,
 				26B3C7AA2C5FC4AE0045A050 /* Color.xcassets in Resources */,
 				262EA5C52C55387C00162FC0 /* Assets.xcassets in Resources */,
+				2699BD842C6506F300CB3DF0 /* HomeVideoCell.xib in Resources */,
 				262EA5C32C55387B00162FC0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,6 +179,8 @@
 				262EA5C02C55387B00162FC0 /* LoginViewController.swift in Sources */,
 				262EA5BC2C55387B00162FC0 /* AppDelegate.swift in Sources */,
 				262EA5BE2C55387B00162FC0 /* SceneDelegate.swift in Sources */,
+				2699BD832C6506F300CB3DF0 /* HomeVideoCell.swift in Sources */,
+				2699BD7C2C6505ED00CB3DF0 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
