@@ -80,8 +80,8 @@
 		2699BD7A2C6505DF00CB3DF0 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				2699BD7E2C6506B700CB3DF0 /* Cell */,
 				2699BD7B2C6505ED00CB3DF0 /* HomeViewController.swift */,
+				2699BD7E2C6506B700CB3DF0 /* Cell */,
 			);
 			path = Home;
 			sourceTree = "<group>";
