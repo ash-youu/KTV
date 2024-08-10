@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,38 +19,52 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YVz-gi-Ntd" userLabel="Container View">
-                        <rect key="frame" x="0.0" y="0.0" width="360" height="495"/>
+                        <rect key="frame" x="20" y="0.0" width="320" height="444"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="추천" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BxL-OM-GOb">
-                                <rect key="frame" x="30" y="25" width="32" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="추천" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BxL-OM-GOb">
+                                <rect key="frame" x="13.999999999999998" y="24" width="31.333333333333329" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="qu4-to-3xV"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <color key="textColor" name="main-wh"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0bA-4c-vLu">
-                                <rect key="frame" x="57" y="75" width="247" height="333"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0bA-4c-vLu">
+                                <rect key="frame" x="26" y="70" width="268" height="320"/>
+                                <color key="backgroundColor" name="bg"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFx-Rg-afI" userLabel="Fold Button">
-                                <rect key="frame" x="157" y="420" width="48" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="dropdown(펼침)"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFx-Rg-afI" userLabel="Fold Button">
+                                <rect key="frame" x="148" y="410" width="24" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="14" id="iEA-sp-15D"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="dropdown(펼침)"/>
                                 <connections>
                                     <action selector="foldButtonDidTap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="nAI-N6-Rfb"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" name="bg"/>
+                        <constraints>
+                            <constraint firstItem="BxL-OM-GOb" firstAttribute="leading" secondItem="YVz-gi-Ntd" secondAttribute="leading" constant="14" id="6sy-s1-ru7"/>
+                            <constraint firstItem="0bA-4c-vLu" firstAttribute="top" secondItem="BxL-OM-GOb" secondAttribute="bottom" constant="25" id="Co3-5b-nFL"/>
+                            <constraint firstItem="BxL-OM-GOb" firstAttribute="top" secondItem="YVz-gi-Ntd" secondAttribute="top" constant="24" id="UAM-Js-IFb"/>
+                            <constraint firstItem="0bA-4c-vLu" firstAttribute="leading" secondItem="YVz-gi-Ntd" secondAttribute="leading" constant="26" id="UIy-yk-p2v"/>
+                            <constraint firstAttribute="trailing" secondItem="0bA-4c-vLu" secondAttribute="trailing" constant="26" id="Xyy-Jd-DOE"/>
+                            <constraint firstItem="fFx-Rg-afI" firstAttribute="top" secondItem="0bA-4c-vLu" secondAttribute="bottom" constant="20" id="b36-EY-Ad4"/>
+                            <constraint firstAttribute="bottom" secondItem="fFx-Rg-afI" secondAttribute="bottom" constant="20" id="ccQ-jj-eXW"/>
+                            <constraint firstItem="fFx-Rg-afI" firstAttribute="centerX" secondItem="YVz-gi-Ntd" secondAttribute="centerX" id="rw6-IF-Fa7"/>
+                        </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" name="bg"/>
                 <constraints>
-                    <constraint firstItem="YVz-gi-Ntd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="8cW-M1-lnd"/>
-                    <constraint firstAttribute="bottom" secondItem="YVz-gi-Ntd" secondAttribute="bottom" id="Trd-6n-TjI"/>
-                    <constraint firstAttribute="trailing" secondItem="YVz-gi-Ntd" secondAttribute="trailing" id="by4-no-EQD"/>
-                    <constraint firstItem="YVz-gi-Ntd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="l9E-N8-bNa"/>
+                    <constraint firstItem="YVz-gi-Ntd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="HHL-Rm-vwJ"/>
+                    <constraint firstItem="YVz-gi-Ntd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Sft-NZ-bgX"/>
+                    <constraint firstAttribute="trailing" secondItem="YVz-gi-Ntd" secondAttribute="trailing" constant="20" id="U4r-rz-6yz"/>
+                    <constraint firstAttribute="bottom" secondItem="YVz-gi-Ntd" secondAttribute="bottom" constant="51" id="Wlc-bt-a41"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -71,8 +84,5 @@
         <namedColor name="main-wh">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

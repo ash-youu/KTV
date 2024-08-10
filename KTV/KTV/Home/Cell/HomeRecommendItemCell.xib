@@ -117,9 +117,10 @@
                 </subviews>
                 <color key="backgroundColor" name="bg"/>
                 <constraints>
-                    <constraint firstItem="JU5-6I-d8q" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Dkx-ET-QyN"/>
                     <constraint firstAttribute="trailing" secondItem="JU5-6I-d8q" secondAttribute="trailing" id="JF8-3h-AKR"/>
                     <constraint firstItem="JU5-6I-d8q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="YIe-g7-53l"/>
+                    <constraint firstItem="JU5-6I-d8q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="tKn-X7-OVF"/>
+                    <constraint firstAttribute="bottom" secondItem="JU5-6I-d8q" secondAttribute="bottom" constant="6" id="xn5-II-X6a"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

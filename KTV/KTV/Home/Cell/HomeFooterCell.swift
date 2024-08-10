@@ -10,7 +10,7 @@ import UIKit
 class HomeFooterCell: UITableViewCell {
 
     static let identifier: String = "\(HomeFooterCell.self)"
-    static let height: CGFloat = 63
+    static let height: CGFloat = 68
     
     override func awakeFromNib() {
         super.awakeFromNib()
