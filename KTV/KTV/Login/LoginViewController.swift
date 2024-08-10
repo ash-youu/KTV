@@ -12,6 +12,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var loginButton: UIButton!
     
+    // 화면 회전 관련 설정 (회전 불가 설정)
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask { .portrait }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

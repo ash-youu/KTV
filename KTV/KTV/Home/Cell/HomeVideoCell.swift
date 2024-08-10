@@ -9,6 +9,9 @@ import UIKit
 
 class HomeVideoCell: UITableViewCell {
     
+    static let identifier: String = "\(HomeVideoCell.self)"
+    static let height: CGFloat = 320
+    
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var thumnailImageView: UIImageView!
     @IBOutlet weak var hotImageView: UIImageView!
@@ -32,5 +35,4 @@ class HomeVideoCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }

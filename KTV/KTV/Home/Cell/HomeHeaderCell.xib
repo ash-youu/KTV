@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="HomeHeaderCell" customModule="KTV" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GbG-2c-QVt">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wbU-JK-lOb">
+                                <rect key="frame" x="21" y="0.0" width="372" height="50"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tv-logo" translatesAutoresizingMaskIntoConstraints="NO" id="yaf-HL-I49">
+                                        <rect key="frame" x="0.0" y="13" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="1z5-me-BG8"/>
+                                            <constraint firstAttribute="width" constant="24" id="3Cs-qa-4vi"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="K사 영상/스트리밍" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZR-iN-Fbx">
+                                        <rect key="frame" x="32" y="15.333333333333334" width="340" height="19.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <color key="textColor" name="main-wh"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="bg"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="wbU-JK-lOb" secondAttribute="trailing" id="Afn-cO-KBB"/>
+                            <constraint firstAttribute="bottom" secondItem="wbU-JK-lOb" secondAttribute="bottom" id="NrD-8c-S7E"/>
+                            <constraint firstItem="wbU-JK-lOb" firstAttribute="leading" secondItem="GbG-2c-QVt" secondAttribute="leading" constant="21" id="TmJ-UM-MYt"/>
+                            <constraint firstItem="wbU-JK-lOb" firstAttribute="top" secondItem="GbG-2c-QVt" secondAttribute="top" id="c8b-FH-Diw"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" name="bg"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="GbG-2c-QVt" secondAttribute="bottom" id="MwG-c2-8iV"/>
+                    <constraint firstAttribute="trailing" secondItem="GbG-2c-QVt" secondAttribute="trailing" id="RES-jC-4NE"/>
+                    <constraint firstItem="GbG-2c-QVt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="kM9-yd-8mE"/>
+                    <constraint firstItem="GbG-2c-QVt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="wno-dt-BTB"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="95" y="3"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="tv-logo" width="24" height="28.333333969116211"/>
+        <namedColor name="bg">
+            <color red="0.10588235294117647" green="0.10588235294117647" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="main-wh">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

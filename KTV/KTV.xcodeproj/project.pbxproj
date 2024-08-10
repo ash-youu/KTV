@@ -13,6 +13,16 @@
 		262EA5C32C55387B00162FC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262EA5C12C55387B00162FC0 /* Main.storyboard */; };
 		262EA5C52C55387C00162FC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 262EA5C42C55387C00162FC0 /* Assets.xcassets */; };
 		262EA5C82C55387C00162FC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262EA5C62C55387C00162FC0 /* LaunchScreen.storyboard */; };
+		268512FE2C66684A008141AC /* HomeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268512FD2C66684A008141AC /* HomeSection.swift */; };
+		268513002C666EA1008141AC /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268512FF2C666EA1008141AC /* TabBarViewController.swift */; };
+		268513092C6672E8008141AC /* HomeRecommendContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268513072C6672E8008141AC /* HomeRecommendContainerCell.swift */; };
+		2685130A2C6672E8008141AC /* HomeRecommendContainerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 268513082C6672E8008141AC /* HomeRecommendContainerCell.xib */; };
+		2685130D2C66736E008141AC /* HomeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2685130B2C66736E008141AC /* HomeHeaderCell.swift */; };
+		2685130E2C66736E008141AC /* HomeHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2685130C2C66736E008141AC /* HomeHeaderCell.xib */; };
+		268513112C667382008141AC /* HomeFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2685130F2C667382008141AC /* HomeFooterCell.swift */; };
+		268513122C667382008141AC /* HomeFooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 268513102C667382008141AC /* HomeFooterCell.xib */; };
+		268513152C6673A9008141AC /* HomeRecommendItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268513132C6673A9008141AC /* HomeRecommendItemCell.swift */; };
+		268513162C6673A9008141AC /* HomeRecommendItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 268513142C6673A9008141AC /* HomeRecommendItemCell.xib */; };
 		2699BD7C2C6505ED00CB3DF0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2699BD7B2C6505ED00CB3DF0 /* HomeViewController.swift */; };
 		2699BD832C6506F300CB3DF0 /* HomeVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2699BD812C6506F300CB3DF0 /* HomeVideoCell.swift */; };
 		2699BD842C6506F300CB3DF0 /* HomeVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2699BD822C6506F300CB3DF0 /* HomeVideoCell.xib */; };
@@ -28,6 +38,16 @@
 		262EA5C42C55387C00162FC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		262EA5C72C55387C00162FC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		262EA5C92C55387C00162FC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		268512FD2C66684A008141AC /* HomeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSection.swift; sourceTree = "<group>"; };
+		268512FF2C666EA1008141AC /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		268513072C6672E8008141AC /* HomeRecommendContainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecommendContainerCell.swift; sourceTree = "<group>"; };
+		268513082C6672E8008141AC /* HomeRecommendContainerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRecommendContainerCell.xib; sourceTree = "<group>"; };
+		2685130B2C66736E008141AC /* HomeHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderCell.swift; sourceTree = "<group>"; };
+		2685130C2C66736E008141AC /* HomeHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeHeaderCell.xib; sourceTree = "<group>"; };
+		2685130F2C667382008141AC /* HomeFooterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFooterCell.swift; sourceTree = "<group>"; };
+		268513102C667382008141AC /* HomeFooterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeFooterCell.xib; sourceTree = "<group>"; };
+		268513132C6673A9008141AC /* HomeRecommendItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecommendItemCell.swift; sourceTree = "<group>"; };
+		268513142C6673A9008141AC /* HomeRecommendItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRecommendItemCell.xib; sourceTree = "<group>"; };
 		2699BD7B2C6505ED00CB3DF0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2699BD812C6506F300CB3DF0 /* HomeVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVideoCell.swift; sourceTree = "<group>"; };
 		2699BD822C6506F300CB3DF0 /* HomeVideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVideoCell.xib; sourceTree = "<group>"; };
@@ -81,6 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				2699BD7B2C6505ED00CB3DF0 /* HomeViewController.swift */,
+				268512FD2C66684A008141AC /* HomeSection.swift */,
+				268512FF2C666EA1008141AC /* TabBarViewController.swift */,
 				2699BD7E2C6506B700CB3DF0 /* Cell */,
 			);
 			path = Home;
@@ -99,6 +121,14 @@
 			children = (
 				2699BD812C6506F300CB3DF0 /* HomeVideoCell.swift */,
 				2699BD822C6506F300CB3DF0 /* HomeVideoCell.xib */,
+				2685130B2C66736E008141AC /* HomeHeaderCell.swift */,
+				2685130C2C66736E008141AC /* HomeHeaderCell.xib */,
+				2685130F2C667382008141AC /* HomeFooterCell.swift */,
+				268513102C667382008141AC /* HomeFooterCell.xib */,
+				268513072C6672E8008141AC /* HomeRecommendContainerCell.swift */,
+				268513082C6672E8008141AC /* HomeRecommendContainerCell.xib */,
+				268513132C6673A9008141AC /* HomeRecommendItemCell.swift */,
+				268513142C6673A9008141AC /* HomeRecommendItemCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -163,9 +193,13 @@
 			files = (
 				262EA5C82C55387C00162FC0 /* LaunchScreen.storyboard in Resources */,
 				26B3C7AA2C5FC4AE0045A050 /* Color.xcassets in Resources */,
+				268513162C6673A9008141AC /* HomeRecommendItemCell.xib in Resources */,
 				262EA5C52C55387C00162FC0 /* Assets.xcassets in Resources */,
+				268513122C667382008141AC /* HomeFooterCell.xib in Resources */,
 				2699BD842C6506F300CB3DF0 /* HomeVideoCell.xib in Resources */,
 				262EA5C32C55387B00162FC0 /* Main.storyboard in Resources */,
+				2685130E2C66736E008141AC /* HomeHeaderCell.xib in Resources */,
+				2685130A2C6672E8008141AC /* HomeRecommendContainerCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,8 +212,14 @@
 			files = (
 				262EA5C02C55387B00162FC0 /* LoginViewController.swift in Sources */,
 				262EA5BC2C55387B00162FC0 /* AppDelegate.swift in Sources */,
+				268513092C6672E8008141AC /* HomeRecommendContainerCell.swift in Sources */,
+				268512FE2C66684A008141AC /* HomeSection.swift in Sources */,
 				262EA5BE2C55387B00162FC0 /* SceneDelegate.swift in Sources */,
+				268513112C667382008141AC /* HomeFooterCell.swift in Sources */,
+				268513152C6673A9008141AC /* HomeRecommendItemCell.swift in Sources */,
+				268513002C666EA1008141AC /* TabBarViewController.swift in Sources */,
 				2699BD832C6506F300CB3DF0 /* HomeVideoCell.swift in Sources */,
+				2685130D2C66736E008141AC /* HomeHeaderCell.swift in Sources */,
 				2699BD7C2C6505ED00CB3DF0 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,7 +372,6 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -363,7 +402,6 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
