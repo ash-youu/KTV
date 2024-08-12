@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JdL-nr-rT2">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -10,21 +10,20 @@
     </dependencies>
     <scenes>
         <!--Login View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="dwX-eq-7he">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="KTV" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="JdL-nr-rT2" customClass="LoginViewController" customModule="KTV" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="spu-hV-VDi">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchImage" translatesAutoresizingMaskIntoConstraints="NO" id="cIC-pG-CEA">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchImage" translatesAutoresizingMaskIntoConstraints="NO" id="jjr-5f-Atk">
                                 <rect key="frame" x="171.66666666666666" y="396.66666666666669" width="50" height="59"/>
                             </imageView>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIZ-0G-AMx">
-                                <rect key="frame" x="96.666666666666686" y="507.66666666666674" width="200" height="38"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsi-sr-iaT">
+                                <rect key="frame" x="96.666666666666686" y="495.66666666666669" width="200" height="32.000000000000057"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="Iyt-wc-eRb"/>
-                                    <constraint firstAttribute="height" constant="38" id="wA6-fx-75L"/>
+                                    <constraint firstAttribute="width" constant="200" id="hU6-vw-Yoe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -32,27 +31,27 @@
                                     <color key="titleColor" name="main-brown"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N0o-oc-aKW"/>
+                                    <action selector="buttonDidTap:" destination="JdL-nr-rT2" eventType="touchUpInside" id="iWO-8h-XVK"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="f5t-h0-9BU"/>
                         <color key="backgroundColor" name="main-yellow"/>
                         <constraints>
-                            <constraint firstItem="kIZ-0G-AMx" firstAttribute="top" secondItem="cIC-pG-CEA" secondAttribute="bottom" constant="52" id="1m3-D2-GB3"/>
-                            <constraint firstItem="kIZ-0G-AMx" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="6C1-m7-RZD"/>
-                            <constraint firstItem="cIC-pG-CEA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="VFj-o3-YKk"/>
-                            <constraint firstItem="cIC-pG-CEA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xwd-Gl-Nzg"/>
+                            <constraint firstItem="jsi-sr-iaT" firstAttribute="top" secondItem="jjr-5f-Atk" secondAttribute="bottom" constant="40" id="gud-lm-eWe"/>
+                            <constraint firstItem="jsi-sr-iaT" firstAttribute="centerX" secondItem="spu-hV-VDi" secondAttribute="centerX" id="kTQ-g7-NRx"/>
+                            <constraint firstItem="jjr-5f-Atk" firstAttribute="centerY" secondItem="spu-hV-VDi" secondAttribute="centerY" id="pMt-ay-b3N"/>
+                            <constraint firstItem="jjr-5f-Atk" firstAttribute="centerX" secondItem="spu-hV-VDi" secondAttribute="centerX" id="xeL-Gx-5kh"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="cIC-pG-CEA" id="kHq-Ry-DTw"/>
-                        <outlet property="loginButton" destination="kIZ-0G-AMx" id="Bul-9E-Rro"/>
+                        <outlet property="imageView" destination="jjr-5f-Atk" id="gxq-88-nPA"/>
+                        <outlet property="loginButton" destination="jsi-sr-iaT" id="p97-Nr-1JT"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9YA-Za-zSc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="58" y="-27"/>
+            <point key="canvasLocation" x="-7" y="-44"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="s3P-aD-qZI">

@@ -31,4 +31,3 @@ class LoginViewController: UIViewController {
         self.view.window?.rootViewController = self.storyboard?.instantiateViewController(withIdentifier: "tabbar")
     }
 }
-
