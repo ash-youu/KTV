@@ -47,6 +47,10 @@ class HomeViewController: UIViewController {
         tableView.register(
             UINib(nibName: HomeRankingContainerCell.identifier, bundle: nil),
             forCellReuseIdentifier: HomeRankingContainerCell.identifier)
+        
+        tableView.register(
+            UINib(nibName: HomeRecentWatchContainerCell.identifier, bundle: nil)
+            , forCellReuseIdentifier: HomeRecentWatchContainerCell.identifier)
     }
 }
 
@@ -67,6 +71,8 @@ extension HomeViewController: UITableViewDataSource {
             return 2
         case .ranking:
             return 1
+        case .recentWatch:
+            return 1
         case .recommend:
             return 1
         case .footer:
@@ -84,6 +90,8 @@ extension HomeViewController: UITableViewDataSource {
             return HomeVideoCell.height
         case .ranking:
             return HomeRankingContainerCell.height
+        case .recentWatch:
+            return HomeRecentWatchContainerCell.height
         case .recommend:
             return HomeRecommendContainerCell.height
         case .footer:
@@ -103,6 +111,8 @@ extension HomeViewController: UITableViewDataSource {
             return tableView.dequeueReusableCell(withIdentifier: HomeVideoCell.identifier, for: indexPath)
         case .ranking:
             return tableView.dequeueReusableCell(withIdentifier: HomeRankingContainerCell.identifier, for: indexPath)
+        case .recentWatch:
+            return tableView.dequeueReusableCell(withIdentifier: HomeRecentWatchContainerCell.identifier, for: indexPath)
         case .recommend:
             return tableView.dequeueReusableCell(withIdentifier: HomeRecommendContainerCell.identifier, for: indexPath)
         case .footer:

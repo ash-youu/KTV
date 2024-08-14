@@ -31,6 +31,10 @@
 		26C108962C69FE5C0013821C /* HomeRankingContainerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C108942C69FE5C0013821C /* HomeRankingContainerCell.xib */; };
 		26C108992C6A023C0013821C /* HomeRankingItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C108972C6A023C0013821C /* HomeRankingItemCell.swift */; };
 		26C1089A2C6A023C0013821C /* HomeRankingItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C108982C6A023C0013821C /* HomeRankingItemCell.xib */; };
+		26C108A32C6A164C0013821C /* HomeRecentWatchItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C108A12C6A164C0013821C /* HomeRecentWatchItemCell.swift */; };
+		26C108A42C6A164C0013821C /* HomeRecentWatchItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C108A22C6A164C0013821C /* HomeRecentWatchItemCell.xib */; };
+		26C108A72C6CEEE60013821C /* HomeRecentWatchContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C108A52C6CEEE60013821C /* HomeRecentWatchContainerCell.swift */; };
+		26C108A82C6CEEE60013821C /* HomeRecentWatchContainerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C108A62C6CEEE60013821C /* HomeRecentWatchContainerCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +64,10 @@
 		26C108942C69FE5C0013821C /* HomeRankingContainerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRankingContainerCell.xib; sourceTree = "<group>"; };
 		26C108972C6A023C0013821C /* HomeRankingItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRankingItemCell.swift; sourceTree = "<group>"; };
 		26C108982C6A023C0013821C /* HomeRankingItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRankingItemCell.xib; sourceTree = "<group>"; };
+		26C108A12C6A164C0013821C /* HomeRecentWatchItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecentWatchItemCell.swift; sourceTree = "<group>"; };
+		26C108A22C6A164C0013821C /* HomeRecentWatchItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRecentWatchItemCell.xib; sourceTree = "<group>"; };
+		26C108A52C6CEEE60013821C /* HomeRecentWatchContainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecentWatchContainerCell.swift; sourceTree = "<group>"; };
+		26C108A62C6CEEE60013821C /* HomeRecentWatchContainerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRecentWatchContainerCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +149,10 @@
 				26C108942C69FE5C0013821C /* HomeRankingContainerCell.xib */,
 				26C108972C6A023C0013821C /* HomeRankingItemCell.swift */,
 				26C108982C6A023C0013821C /* HomeRankingItemCell.xib */,
+				26C108A52C6CEEE60013821C /* HomeRecentWatchContainerCell.swift */,
+				26C108A62C6CEEE60013821C /* HomeRecentWatchContainerCell.xib */,
+				26C108A12C6A164C0013821C /* HomeRecentWatchItemCell.swift */,
+				26C108A22C6A164C0013821C /* HomeRecentWatchItemCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -209,8 +221,10 @@
 				262EA5C52C55387C00162FC0 /* Assets.xcassets in Resources */,
 				26C1089A2C6A023C0013821C /* HomeRankingItemCell.xib in Resources */,
 				268513122C667382008141AC /* HomeFooterCell.xib in Resources */,
+				26C108A82C6CEEE60013821C /* HomeRecentWatchContainerCell.xib in Resources */,
 				2699BD842C6506F300CB3DF0 /* HomeVideoCell.xib in Resources */,
 				262EA5C32C55387B00162FC0 /* Main.storyboard in Resources */,
+				26C108A42C6A164C0013821C /* HomeRecentWatchItemCell.xib in Resources */,
 				2685130E2C66736E008141AC /* HomeHeaderCell.xib in Resources */,
 				2685130A2C6672E8008141AC /* HomeRecommendContainerCell.xib in Resources */,
 				26C108962C69FE5C0013821C /* HomeRankingContainerCell.xib in Resources */,
@@ -231,7 +245,9 @@
 				26C108952C69FE5C0013821C /* HomeRankingContainerCell.swift in Sources */,
 				268512FE2C66684A008141AC /* HomeSection.swift in Sources */,
 				262EA5BE2C55387B00162FC0 /* SceneDelegate.swift in Sources */,
+				26C108A72C6CEEE60013821C /* HomeRecentWatchContainerCell.swift in Sources */,
 				268513112C667382008141AC /* HomeFooterCell.swift in Sources */,
+				26C108A32C6A164C0013821C /* HomeRecentWatchItemCell.swift in Sources */,
 				268513152C6673A9008141AC /* HomeRecommendItemCell.swift in Sources */,
 				268513002C666EA1008141AC /* TabBarViewController.swift in Sources */,
 				2699BD832C6506F300CB3DF0 /* HomeVideoCell.swift in Sources */,
