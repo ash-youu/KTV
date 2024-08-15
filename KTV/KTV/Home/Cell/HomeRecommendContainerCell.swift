@@ -28,20 +28,22 @@ class HomeRecommendContainerCell: UITableViewCell {
     
     weak var delegate: HomeRecommendContainerCellDelegate?
     
+    private var recommends: [Home.Recommend]?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        configureView()
-        setupTableView()
+        setContainerView()
+        setTableView()
     }
     
-    private func configureView() {
+    private func setContainerView() {
         containerView.layer.cornerRadius = 10
         containerView.layer.borderWidth = 1
         containerView.layer.borderColor = UIColor(named: "stroke-light")?.cgColor
     }
     
-    private func setupTableView() {
+    private func setTableView() {
         tableView.rowHeight = HomeRecommendItemCell.height
         tableView.delegate = self
         tableView.dataSource = self
@@ -51,7 +53,11 @@ class HomeRecommendContainerCell: UITableViewCell {
         )
     }
     
-    @IBAction func foldButtonDidTap(_ sender: UIButton) {
+    @IBAction func foldButtonDidTap(_ sender: UIButton) {}
+    
+    func setData(_ data: [Home.Recommend]) {
+        recommends = data
+        tableView.reloadData() 
     }
 }
  
@@ -59,11 +65,24 @@ extension HomeRecommendContainerCell: UITableViewDelegate { }
 
 extension HomeRecommendContainerCell: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // TODO: 추후 폴드 버튼 수정 시 업데이트 필요
         return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: HomeRecommendItemCell.identifier, for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: HomeRecommendItemCell.identifier,
+            for: indexPath
+        ) as? HomeRecommendItemCell else {
+            return UITableViewCell()
+        }
+        
+        guard let data = recommends?[indexPath.item] else {
+            return cell
+        }
+        
+        cell.setData(data, rank: indexPath.row)
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

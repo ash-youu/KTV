@@ -10,6 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    private let homeViewModel = HomeViewModel()
     
     // 상태바 색상 변경
     override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
@@ -18,6 +19,11 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         setupTableView()
+        
+        //json data 연동
+        bindViewModel()
+        
+        homeViewModel.requestData()
     }
     
     private func setupTableView() {
@@ -52,6 +58,16 @@ class HomeViewController: UIViewController {
             UINib(nibName: HomeRecentWatchContainerCell.identifier, bundle: nil)
             , forCellReuseIdentifier: HomeRecentWatchContainerCell.identifier)
     }
+    
+    private func bindViewModel() {
+        homeViewModel.dataChanged = { [weak self] in
+            DispatchQueue.main.async {
+                self?.tableView.isHidden = false
+                self?.tableView.reloadData()
+            }
+
+        }
+    }
 }
 
 extension HomeViewController: UITableViewDelegate { }
@@ -68,7 +84,7 @@ extension HomeViewController: UITableViewDataSource {
         case .header:
             return 1
         case .video:
-            return 2
+            return homeViewModel.home?.videos.count ?? 0
         case .ranking:
             return 1
         case .recentWatch:
@@ -82,7 +98,7 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         guard let section = HomeSection(rawValue: indexPath.section) else { return 0 }
-
+        
         switch section {
         case .header:
             return HomeHeaderCell.height
@@ -108,13 +124,41 @@ extension HomeViewController: UITableViewDataSource {
         case .header:
             return tableView.dequeueReusableCell(withIdentifier: HomeHeaderCell.identifier, for: indexPath)
         case .video:
-            return tableView.dequeueReusableCell(withIdentifier: HomeVideoCell.identifier, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: HomeVideoCell.identifier, for: indexPath)
+            
+            if let cell = cell as? HomeVideoCell,
+               let data = self.homeViewModel.home?.videos[indexPath.row] {
+                cell.setData(data)
+            }
+            
+            return cell
         case .ranking:
-            return tableView.dequeueReusableCell(withIdentifier: HomeRankingContainerCell.identifier, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: HomeRankingContainerCell.identifier, for: indexPath)
+            
+            if let cell = cell as? HomeRankingContainerCell,
+               let datas = homeViewModel.home?.rankings {
+                cell.setData(datas)
+            }
+            
+            return cell
         case .recentWatch:
-            return tableView.dequeueReusableCell(withIdentifier: HomeRecentWatchContainerCell.identifier, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: HomeRecentWatchContainerCell.identifier, for: indexPath)
+            
+            if let cell = cell as? HomeRecentWatchContainerCell,
+               let datas = homeViewModel.home?.recents {
+                cell.setData(datas)
+            }
+            
+            return cell
         case .recommend:
-            return tableView.dequeueReusableCell(withIdentifier: HomeRecommendContainerCell.identifier, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: HomeRecommendContainerCell.identifier, for: indexPath)
+            
+            if let cell = cell as? HomeRecommendContainerCell,
+               let datas = homeViewModel.home?.recommends {
+                cell.setData(datas)
+            }
+            
+            return cell
         case .footer:
             return tableView.dequeueReusableCell(withIdentifier: HomeFooterCell.identifier, for: indexPath)
         }

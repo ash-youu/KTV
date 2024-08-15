@@ -8,11 +8,12 @@
 import UIKit
 
 class HomeRankingItemCell: UICollectionViewCell {
-
+    
     static let identifier: String = "\(HomeRankingItemCell.self)"
     
-    @IBOutlet weak var ThumbnailImageView: UIImageView!
+    @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var numberLabel: UILabel!
+    private var imageTask: Task<Void, Never>?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,10 +24,18 @@ class HomeRankingItemCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        numberLabel.text = nil
+        resetView()
     }
-
-    func setRank(_ rank: Int) {
+    
+    private func resetView() {
+        imageTask?.cancel()
+        imageTask = nil
+        numberLabel.text = nil
+        thumbnailImageView.image = nil
+    }
+    
+    func setData(_ data: Home.Ranking, rank: Int) {
         numberLabel.text = "\(rank + 1)"
+        imageTask = thumbnailImageView.loadImage(url: data.imageUrl)
     }
 }

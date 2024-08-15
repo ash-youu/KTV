@@ -49,8 +49,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="ThumbnailImageView" destination="fNX-Sf-eLj" id="FUa-hN-cnJ"/>
                 <outlet property="numberLabel" destination="I1X-2i-vzG" id="qfP-F4-N66"/>
+                <outlet property="thumbnailImageView" destination="fNX-Sf-eLj" id="FUa-hN-cnJ"/>
             </connections>
             <point key="canvasLocation" x="129.7709923664122" y="-11.267605633802818"/>
         </tableViewCell>

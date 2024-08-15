@@ -17,10 +17,15 @@ class HomeRankingContainerCell: UITableViewCell {
     static let height: CGFloat = 349
     @IBOutlet weak var collectionView: UICollectionView!
     weak var delegate: HomeRankingContainerCellDelegate?
+    private var rankings: [Home.Ranking]?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        setCollectionView()
+    }
+    
+    private func setCollectionView() {
         collectionView.register(
             UINib(nibName: HomeRankingItemCell.identifier, bundle: nil)
             , forCellWithReuseIdentifier: HomeRankingItemCell.identifier
@@ -29,9 +34,10 @@ class HomeRankingContainerCell: UITableViewCell {
         collectionView.dataSource = self
         collectionView.delegate = self
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    
+    func setData(_ data: [Home.Ranking]) {
+        rankings = data
+        collectionView.reloadData()
     }
 }
 
@@ -43,7 +49,7 @@ extension HomeRankingContainerCell: UICollectionViewDelegate {
 
 extension HomeRankingContainerCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        5
+        return rankings?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -54,7 +60,11 @@ extension HomeRankingContainerCell: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        cell.setRank(indexPath.item)
+        guard let data = rankings?[indexPath.item] else {
+            return cell
+        }
+        
+        cell.setData(data, rank: indexPath.item)
         return cell
     }
 }

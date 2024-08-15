@@ -12,7 +12,7 @@ protocol HomeRecentWatchContainerCellDelegate: AnyObject {
 }
 
 class HomeRecentWatchContainerCell: UITableViewCell {
-
+    
     static let identifier: String = "\(HomeRecentWatchContainerCell.self)"
     static let height: CGFloat = 209
     
@@ -20,13 +20,15 @@ class HomeRecentWatchContainerCell: UITableViewCell {
     
     weak var delegate: HomeRecentWatchContainerCellDelegate?
     
+    private var recents: [Home.Recent]?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        setupCollectionView()
+        setCollectionView()
     }
     
-    private func setupCollectionView() {
+    private func setCollectionView() {
         collectionView.layer.cornerRadius = 10
         collectionView.layer.borderWidth = 1
         collectionView.layer.borderColor = UIColor(named: "stroke-light")?.cgColor
@@ -36,18 +38,18 @@ class HomeRecentWatchContainerCell: UITableViewCell {
             forCellWithReuseIdentifier: HomeRecentWatchItemCell.identifier
         )
         
-        collectionView.delegate = self
         collectionView.dataSource = self
     }
-}
-
-extension HomeRecentWatchContainerCell: UICollectionViewDelegate {
     
+    func setData(_ data: [Home.Recent]) {
+        recents = data
+        collectionView.reloadData()
+    }
 }
 
 extension HomeRecentWatchContainerCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return recents?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -56,6 +58,10 @@ extension HomeRecentWatchContainerCell: UICollectionViewDataSource {
             for: indexPath
         ) as? HomeRecentWatchItemCell else {
             return UICollectionViewCell()
+        }
+        
+        if let data = self.recents?[indexPath.item] {
+            cell.setData(data)
         }
         
         return cell
