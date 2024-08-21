@@ -46,6 +46,7 @@
 		26C108A42C6A164C0013821C /* HomeRecentWatchItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C108A22C6A164C0013821C /* HomeRecentWatchItemCell.xib */; };
 		26C108A72C6CEEE60013821C /* HomeRecentWatchContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C108A52C6CEEE60013821C /* HomeRecentWatchContainerCell.swift */; };
 		26C108A82C6CEEE60013821C /* HomeRecentWatchContainerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C108A62C6CEEE60013821C /* HomeRecentWatchContainerCell.xib */; };
+		26C1A9DE2C763485001432ED /* HomeRecommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C1A9DD2C763485001432ED /* HomeRecommendViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +92,7 @@
 		26C108A22C6A164C0013821C /* HomeRecentWatchItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRecentWatchItemCell.xib; sourceTree = "<group>"; };
 		26C108A52C6CEEE60013821C /* HomeRecentWatchContainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecentWatchContainerCell.swift; sourceTree = "<group>"; };
 		26C108A62C6CEEE60013821C /* HomeRecentWatchContainerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRecentWatchContainerCell.xib; sourceTree = "<group>"; };
+		26C1A9DD2C763485001432ED /* HomeRecommendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecommendViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,8 +185,9 @@
 			isa = PBXGroup;
 			children = (
 				2699BD7B2C6505ED00CB3DF0 /* HomeViewController.swift */,
-				26975D842C6E424E009D91D9 /* HomeViewModel.swift */,
 				268512FD2C66684A008141AC /* HomeSection.swift */,
+				26975D842C6E424E009D91D9 /* HomeViewModel.swift */,
+				26C1A9DD2C763485001432ED /* HomeRecommendViewModel.swift */,
 				268512FF2C666EA1008141AC /* TabBarViewController.swift */,
 				2699BD7E2C6506B700CB3DF0 /* Cell */,
 			);
@@ -331,6 +334,7 @@
 				2685130D2C66736E008141AC /* HomeHeaderCell.swift in Sources */,
 				26975D7E2C6E1856009D91D9 /* Home.swift in Sources */,
 				2699BD7C2C6505ED00CB3DF0 /* HomeViewController.swift in Sources */,
+				26C1A9DE2C763485001432ED /* HomeRecommendViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -35,6 +35,7 @@ class HomeRecommendItemCell: UITableViewCell {
     }
     
     private func configureView() {
+        thumbnailContainerView.clipsToBounds = true
         thumbnailContainerView.layer.cornerRadius = 5
         rankLabel.layer.cornerRadius = 5
         rankLabel.clipsToBounds = true
@@ -52,13 +53,15 @@ class HomeRecommendItemCell: UITableViewCell {
     }
     
     func setData(_ data: Home.Recommend, rank: Int?) {
-        imageTask = thumbnailImageView.loadImage(url: data.imageUrl)
-        titleLabel.text = data.title
-        descriptionLabel.text = data.channel
+        rankLabel.isHidden = rank == nil
         
         if let rank {
             rankLabel.text = "\(rank + 1)"
         }
+        
+        imageTask = thumbnailImageView.loadImage(url: data.imageUrl)
+        titleLabel.text = data.title
+        descriptionLabel.text = data.channel
         
         let timeFormatter = DateComponentsFormatter().convertTimeStyle()
         playTimeLabel.text = timeFormatter.string(from: data.playtime)
