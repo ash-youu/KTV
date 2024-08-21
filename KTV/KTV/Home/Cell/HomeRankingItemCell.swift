@@ -13,6 +13,7 @@ class HomeRankingItemCell: UICollectionViewCell {
     
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var numberLabel: UILabel!
+    
     private var imageTask: Task<Void, Never>?
     
     override func awakeFromNib() {

@@ -15,7 +15,6 @@ struct Home: Decodable {
 }
 
 extension Home {
-    
     struct Video: Decodable {
         let videoId: Int
         let isHot: Bool

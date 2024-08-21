@@ -20,5 +20,4 @@ struct DataLoader {
 
         return try jsonDecoder.decode(T.self, from: data)
     }
-    
 }

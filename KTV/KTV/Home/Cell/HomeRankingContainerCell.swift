@@ -15,8 +15,11 @@ class HomeRankingContainerCell: UITableViewCell {
 
     static let identifier: String = "\(HomeRankingContainerCell.self)"
     static let height: CGFloat = 349
+    
     @IBOutlet weak var collectionView: UICollectionView!
+    
     weak var delegate: HomeRankingContainerCellDelegate?
+    
     private var rankings: [Home.Ranking]?
     
     override func awakeFromNib() {

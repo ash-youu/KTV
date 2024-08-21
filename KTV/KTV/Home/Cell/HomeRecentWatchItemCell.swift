@@ -16,6 +16,7 @@ class HomeRecentWatchItemCell: UICollectionViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
+    
     private var imageTask: Task<Void, Never>?
     
     override func awakeFromNib() {

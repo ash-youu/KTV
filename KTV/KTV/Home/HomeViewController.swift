@@ -10,10 +10,11 @@ import UIKit
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    private let homeViewModel = HomeViewModel()
     
     // 상태바 색상 변경
     override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
+    
+    private let homeViewModel = HomeViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,20 +53,19 @@ class HomeViewController: UIViewController {
         
         tableView.register(
             UINib(nibName: HomeRankingContainerCell.identifier, bundle: nil),
-            forCellReuseIdentifier: HomeRankingContainerCell.identifier)
+            forCellReuseIdentifier: HomeRankingContainerCell.identifier
+        )
         
         tableView.register(
             UINib(nibName: HomeRecentWatchContainerCell.identifier, bundle: nil)
-            , forCellReuseIdentifier: HomeRecentWatchContainerCell.identifier)
+            , forCellReuseIdentifier: HomeRecentWatchContainerCell.identifier
+        )
     }
     
     private func bindViewModel() {
         homeViewModel.dataChanged = { [weak self] in
-            DispatchQueue.main.async {
-                self?.tableView.isHidden = false
-                self?.tableView.reloadData()
-            }
-
+            self?.tableView.isHidden = false
+            self?.tableView.reloadData()
         }
     }
 }
@@ -122,9 +122,15 @@ extension HomeViewController: UITableViewDataSource {
         
         switch section {
         case .header:
-            return tableView.dequeueReusableCell(withIdentifier: HomeHeaderCell.identifier, for: indexPath)
+            return tableView.dequeueReusableCell(
+                withIdentifier: HomeHeaderCell.identifier,
+                for: indexPath
+            )
         case .video:
-            let cell = tableView.dequeueReusableCell(withIdentifier: HomeVideoCell.identifier, for: indexPath)
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: HomeVideoCell.identifier,
+                for: indexPath
+            )
             
             if let cell = cell as? HomeVideoCell,
                let data = self.homeViewModel.home?.videos[indexPath.row] {
@@ -133,7 +139,10 @@ extension HomeViewController: UITableViewDataSource {
             
             return cell
         case .ranking:
-            let cell = tableView.dequeueReusableCell(withIdentifier: HomeRankingContainerCell.identifier, for: indexPath)
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: HomeRankingContainerCell.identifier,
+                for: indexPath
+            )
             
             if let cell = cell as? HomeRankingContainerCell,
                let datas = homeViewModel.home?.rankings {
@@ -142,7 +151,10 @@ extension HomeViewController: UITableViewDataSource {
             
             return cell
         case .recentWatch:
-            let cell = tableView.dequeueReusableCell(withIdentifier: HomeRecentWatchContainerCell.identifier, for: indexPath)
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: HomeRecentWatchContainerCell.identifier,
+                for: indexPath
+            )
             
             if let cell = cell as? HomeRecentWatchContainerCell,
                let datas = homeViewModel.home?.recents {
@@ -151,7 +163,10 @@ extension HomeViewController: UITableViewDataSource {
             
             return cell
         case .recommend:
-            let cell = tableView.dequeueReusableCell(withIdentifier: HomeRecommendContainerCell.identifier, for: indexPath)
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: HomeRecommendContainerCell.identifier,
+                for: indexPath
+            )
             
             if let cell = cell as? HomeRecommendContainerCell,
                let datas = homeViewModel.home?.recommends {
@@ -160,7 +175,10 @@ extension HomeViewController: UITableViewDataSource {
             
             return cell
         case .footer:
-            return tableView.dequeueReusableCell(withIdentifier: HomeFooterCell.identifier, for: indexPath)
+            return tableView.dequeueReusableCell(
+                withIdentifier: HomeFooterCell.identifier,
+                for: indexPath
+            )
         }
     }
 }

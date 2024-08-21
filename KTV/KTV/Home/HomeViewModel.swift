@@ -7,7 +7,7 @@
 
 import Foundation
 
-class HomeViewModel {
+@MainActor class HomeViewModel {
     
     private(set) var home: Home?
     var dataChanged: (() -> Void)?
