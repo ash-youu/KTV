@@ -11,6 +11,7 @@ class HomeRankingItemCell: UICollectionViewCell {
     
     static let identifier: String = "\(HomeRankingItemCell.self)"
     
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var numberLabel: UILabel!
     
@@ -19,7 +20,8 @@ class HomeRankingItemCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        contentView.layer.cornerRadius = 10
+        containerView.layer.cornerRadius = 10
+        containerView.clipsToBounds = true
     }
     
     override func prepareForReuse() {

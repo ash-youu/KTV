@@ -11,10 +11,10 @@ protocol HomeRankingContainerCellDelegate: AnyObject {
     func homeRankingContainerCell(_ cell: HomeRankingContainerCell, didSelectItemAt index: Int)
 }
 
-class HomeRankingContainerCell: UITableViewCell {
+class HomeRankingContainerCell: UICollectionViewCell {
 
     static let identifier: String = "\(HomeRankingContainerCell.self)"
-    static let height: CGFloat = 349
+    static let height: CGFloat = 328
     
     @IBOutlet weak var collectionView: UICollectionView!
     

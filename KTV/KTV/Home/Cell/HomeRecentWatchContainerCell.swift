@@ -11,10 +11,10 @@ protocol HomeRecentWatchContainerCellDelegate: AnyObject {
     func homeRecentWatchContainerCell(_ cell: HomeRecentWatchContainerCell, didSelectItemAt index: Int)
 }
 
-class HomeRecentWatchContainerCell: UITableViewCell {
+class HomeRecentWatchContainerCell: UICollectionViewCell {
     
     static let identifier: String = "\(HomeRecentWatchContainerCell.self)"
-    static let height: CGFloat = 209
+    static let height: CGFloat = 189
     
     @IBOutlet weak var collectionView: UICollectionView!
     

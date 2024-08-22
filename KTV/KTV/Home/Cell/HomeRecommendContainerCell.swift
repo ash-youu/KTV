@@ -12,19 +12,18 @@ protocol HomeRecommendContainerCellDelegate: AnyObject {
     func homeRecommendContainerCellFoldChanged(_ cell: HomeRecommendContainerCell)
 }
 
-class HomeRecommendContainerCell: UITableViewCell {
+class HomeRecommendContainerCell: UICollectionViewCell {
     
     static let identifier: String = "\(HomeRecommendContainerCell.self)"
     
     static func height(viewModel: HomeRecommendViewModel) -> CGFloat {
         let top: CGFloat = 84 - 6 // cell의 상단 여백
         let bottom: CGFloat = 68 - 6 // cell의 하단 여백
-        let footerInset: CGFloat = 51 // container -> footer 까지의 여백
-        return HomeRecommendItemCell.height * CGFloat(viewModel.itemCount) + top + bottom + footerInset
+        return HomeRecommendItemCell.height * CGFloat(viewModel.itemCount) + top + bottom
     }
     
-    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var foldButton: UIButton!
     
     weak var delegate: HomeRecommendContainerCellDelegate?

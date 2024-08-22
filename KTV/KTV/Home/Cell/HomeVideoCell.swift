@@ -7,10 +7,10 @@
 
 import UIKit
 
-class HomeVideoCell: UITableViewCell {
+class HomeVideoCell: UICollectionViewCell {
     
     static let identifier: String = "\(HomeVideoCell.self)"
-    static let height: CGFloat = 320
+    static let height: CGFloat = 300
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var thumnailImageView: UIImageView!
@@ -27,7 +27,7 @@ class HomeVideoCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        setContainerView()
+        configureView()
     }
     
     override func prepareForReuse() {
@@ -36,11 +36,13 @@ class HomeVideoCell: UITableViewCell {
         resetView()
     }
     
-    private func setContainerView() {
+    private func configureView() {
         containerView.layer.cornerRadius = 10
         containerView.layer.borderColor = UIColor(named: "stroke-light")?.cgColor
         containerView.layer.borderWidth = 1
         containerView.clipsToBounds = true
+        
+        channelImageView.layer.cornerRadius = 10
     }
     
     private func resetView() {

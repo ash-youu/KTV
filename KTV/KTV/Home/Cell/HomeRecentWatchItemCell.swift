@@ -10,7 +10,7 @@ import UIKit
 class HomeRecentWatchItemCell: UICollectionViewCell {
     
     static let identifier: String = "\(HomeRecentWatchItemCell.self)"
-    static let height: CGFloat = 209
+    static let height: CGFloat = 148
     
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!

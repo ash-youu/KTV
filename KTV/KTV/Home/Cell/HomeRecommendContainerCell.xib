@@ -5,79 +5,75 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="HomeRecommendContainerCell" customModule="KTV" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="360" height="495"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3ab-P9-9I8" customClass="HomeRecommendContainerCell" customModule="KTV" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="495"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="360" height="495"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0et-sn-Y0I">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="495"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YVz-gi-Ntd" userLabel="Container View">
-                        <rect key="frame" x="20" y="0.0" width="320" height="444"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="495"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="추천" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BxL-OM-GOb">
-                                <rect key="frame" x="13.999999999999998" y="24" width="31.333333333333329" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="qu4-to-3xV"/>
-                                </constraints>
+                                <rect key="frame" x="14" y="24" width="292" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <color key="textColor" name="main-wh"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0bA-4c-vLu">
-                                <rect key="frame" x="26" y="70" width="268" height="320"/>
+                                <rect key="frame" x="26" y="78" width="268" height="372"/>
                                 <color key="backgroundColor" name="bg"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFx-Rg-afI" userLabel="Fold Button">
-                                <rect key="frame" x="148" y="410" width="24" height="14"/>
+                                <rect key="frame" x="0.0" y="450" width="320" height="28"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="14" id="iEA-sp-15D"/>
+                                    <constraint firstAttribute="height" constant="28" id="iEA-sp-15D"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="dropdown(펼침)"/>
+                                <state key="normal" image="unfold"/>
                                 <connections>
-                                    <action selector="foldButtonDidTap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="nAI-N6-Rfb"/>
+                                    <action selector="foldButtonDidTap:" destination="3ab-P9-9I8" eventType="touchUpInside" id="2gF-wq-bHB"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" name="bg"/>
                         <constraints>
                             <constraint firstItem="BxL-OM-GOb" firstAttribute="leading" secondItem="YVz-gi-Ntd" secondAttribute="leading" constant="14" id="6sy-s1-ru7"/>
-                            <constraint firstItem="0bA-4c-vLu" firstAttribute="top" secondItem="BxL-OM-GOb" secondAttribute="bottom" constant="25" id="Co3-5b-nFL"/>
+                            <constraint firstItem="0bA-4c-vLu" firstAttribute="top" secondItem="BxL-OM-GOb" secondAttribute="bottom" constant="33" id="Co3-5b-nFL"/>
+                            <constraint firstAttribute="trailing" secondItem="fFx-Rg-afI" secondAttribute="trailing" id="QNr-R5-O8b"/>
+                            <constraint firstAttribute="trailing" secondItem="BxL-OM-GOb" secondAttribute="trailing" constant="14" id="TNs-nC-Sfd"/>
                             <constraint firstItem="BxL-OM-GOb" firstAttribute="top" secondItem="YVz-gi-Ntd" secondAttribute="top" constant="24" id="UAM-Js-IFb"/>
                             <constraint firstItem="0bA-4c-vLu" firstAttribute="leading" secondItem="YVz-gi-Ntd" secondAttribute="leading" constant="26" id="UIy-yk-p2v"/>
                             <constraint firstAttribute="trailing" secondItem="0bA-4c-vLu" secondAttribute="trailing" constant="26" id="Xyy-Jd-DOE"/>
-                            <constraint firstItem="fFx-Rg-afI" firstAttribute="top" secondItem="0bA-4c-vLu" secondAttribute="bottom" constant="20" id="b36-EY-Ad4"/>
-                            <constraint firstAttribute="bottom" secondItem="fFx-Rg-afI" secondAttribute="bottom" constant="20" id="ccQ-jj-eXW"/>
-                            <constraint firstItem="fFx-Rg-afI" firstAttribute="centerX" secondItem="YVz-gi-Ntd" secondAttribute="centerX" id="rw6-IF-Fa7"/>
+                            <constraint firstItem="fFx-Rg-afI" firstAttribute="top" secondItem="0bA-4c-vLu" secondAttribute="bottom" id="b36-EY-Ad4"/>
+                            <constraint firstAttribute="bottom" secondItem="fFx-Rg-afI" secondAttribute="bottom" constant="17" id="ccQ-jj-eXW"/>
+                            <constraint firstItem="fFx-Rg-afI" firstAttribute="leading" secondItem="YVz-gi-Ntd" secondAttribute="leading" id="vdj-bJ-5Uf"/>
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" name="bg"/>
                 <constraints>
-                    <constraint firstItem="YVz-gi-Ntd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="HHL-Rm-vwJ"/>
-                    <constraint firstItem="YVz-gi-Ntd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Sft-NZ-bgX"/>
-                    <constraint firstAttribute="trailing" secondItem="YVz-gi-Ntd" secondAttribute="trailing" constant="20" id="U4r-rz-6yz"/>
-                    <constraint firstAttribute="bottom" secondItem="YVz-gi-Ntd" secondAttribute="bottom" constant="51" id="Wlc-bt-a41"/>
+                    <constraint firstItem="YVz-gi-Ntd" firstAttribute="top" secondItem="0et-sn-Y0I" secondAttribute="top" id="IoV-DL-0ud"/>
+                    <constraint firstAttribute="trailing" secondItem="YVz-gi-Ntd" secondAttribute="trailing" id="TMV-AU-zCh"/>
+                    <constraint firstItem="YVz-gi-Ntd" firstAttribute="leading" secondItem="0et-sn-Y0I" secondAttribute="leading" id="hiZ-Ie-Da7"/>
+                    <constraint firstAttribute="bottom" secondItem="YVz-gi-Ntd" secondAttribute="bottom" id="ikc-SQ-6A7"/>
                 </constraints>
-            </tableViewCellContentView>
-            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            </collectionViewCellContentView>
             <connections>
-                <outlet property="containerView" destination="YVz-gi-Ntd" id="rzB-ff-Iq9"/>
-                <outlet property="foldButton" destination="fFx-Rg-afI" id="jaM-nF-bfk"/>
-                <outlet property="tableView" destination="0bA-4c-vLu" id="Sl8-mr-zeT"/>
+                <outlet property="containerView" destination="YVz-gi-Ntd" id="7lc-s8-dj9"/>
+                <outlet property="foldButton" destination="fFx-Rg-afI" id="zDw-af-iS3"/>
+                <outlet property="tableView" destination="0bA-4c-vLu" id="HRl-wo-fl3"/>
             </connections>
-            <point key="canvasLocation" x="100.76335877862596" y="-11.619718309859156"/>
-        </tableViewCell>
+            <point key="canvasLocation" x="826" y="-15"/>
+        </collectionViewCell>
     </objects>
     <resources>
-        <image name="dropdown(펼침)" width="24" height="13.666666984558105"/>
+        <image name="unfold" width="24" height="13.666666984558105"/>
         <namedColor name="bg">
             <color red="0.10588235294117647" green="0.10588235294117647" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
