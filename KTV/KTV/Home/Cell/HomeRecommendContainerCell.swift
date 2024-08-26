@@ -19,7 +19,7 @@ class HomeRecommendContainerCell: UICollectionViewCell {
     static func height(viewModel: HomeRecommendViewModel) -> CGFloat {
         let top: CGFloat = 84 - 6 // cell의 상단 여백
         let bottom: CGFloat = 68 - 6 // cell의 하단 여백
-        return HomeRecommendItemCell.height * CGFloat(viewModel.itemCount) + top + bottom
+        return VideoListItemCell.height * CGFloat(viewModel.itemCount) + top + bottom
     }
     
     @IBOutlet weak var containerView: UIView!
@@ -44,12 +44,12 @@ class HomeRecommendContainerCell: UICollectionViewCell {
     }
     
     private func setTableView() {
-        tableView.rowHeight = HomeRecommendItemCell.height
+        tableView.rowHeight = VideoListItemCell.height
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(
-            UINib(nibName: HomeRecommendItemCell.identifier, bundle: .main),
-            forCellReuseIdentifier: HomeRecommendItemCell.identifier
+            UINib(nibName: VideoListItemCell.identifier, bundle: .main),
+            forCellReuseIdentifier: VideoListItemCell.identifier
         )
     }
     
@@ -84,9 +84,9 @@ extension HomeRecommendContainerCell: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: HomeRecommendItemCell.identifier,
+            withIdentifier: VideoListItemCell.identifier,
             for: indexPath
-        ) as? HomeRecommendItemCell else {
+        ) as? VideoListItemCell else {
             return UITableViewCell()
         }
         

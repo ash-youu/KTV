@@ -17,7 +17,7 @@ class HomeRecommendViewModel {
     
     var foldChanged: ((Bool) -> Void)?
     
-    var recommends: [Home.Recommend]?
+    var recommends: [Home.VideoListItem]?
     var itemCount: Int {
         let count = isFolded ? 5 : recommends?.count ?? 0
         

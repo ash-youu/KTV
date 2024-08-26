@@ -204,8 +204,6 @@ extension HomeViewController: UICollectionViewDataSource {
             return collectionView.dequeueReusableCell(withReuseIdentifier: "empty", for: indexPath)
         }
         
-        print("cell for item at \(indexPath.section), \(indexPath.row)")
-        
         switch section {
         case .header, .footer:
             return collectionView.dequeueReusableCell(
