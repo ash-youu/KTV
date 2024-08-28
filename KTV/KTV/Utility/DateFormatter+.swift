@@ -8,8 +8,16 @@
 import Foundation
 
 extension DateFormatter {
+    @discardableResult
     func convertDateStyle() -> DateFormatter {
         self.dateFormat = "YYMMDD."
+        
+        return self
+    }
+    
+    @discardableResult
+    func convertDateVideoViewStyle() -> DateFormatter {
+        self.dateFormat = "yyyy.MMdd"
         
         return self
     }

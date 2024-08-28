@@ -9,7 +9,7 @@ import Foundation
 
 @MainActor class FavoriteViewModel {
     
-    private(set) var favorites: [Home.VideoListItem]?
+    private(set) var favorites: [VideoListItem]?
     var dataChanged: (() -> Void)?
     
     func requestData() {

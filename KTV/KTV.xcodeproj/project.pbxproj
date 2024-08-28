@@ -13,6 +13,17 @@
 		262EA5C32C55387B00162FC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262EA5C12C55387B00162FC0 /* Main.storyboard */; };
 		262EA5C52C55387C00162FC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 262EA5C42C55387C00162FC0 /* Assets.xcassets */; };
 		262EA5C82C55387C00162FC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262EA5C62C55387C00162FC0 /* LaunchScreen.storyboard */; };
+		266370D12C7F533A00B2F436 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266370CF2C7F533A00B2F436 /* VideoViewController.swift */; };
+		266370D22C7F533A00B2F436 /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 266370D02C7F533A00B2F436 /* VideoViewController.xib */; };
+		266370D42C7F6CFF00B2F436 /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266370D32C7F6CFF00B2F436 /* VideoViewModel.swift */; };
+		266370D62C7F6E8500B2F436 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266370D52C7F6E8500B2F436 /* Bookmark.swift */; };
+		266370D82C7F6EBE00B2F436 /* VideoListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266370D72C7F6EBE00B2F436 /* VideoListItem.swift */; };
+		266370DA2C7F6EDB00B2F436 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266370D92C7F6EDB00B2F436 /* Video.swift */; };
+		266370DF2C7F9CAC00B2F436 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266370DD2C7F9CAC00B2F436 /* MoreViewController.swift */; };
+		266370E02C7F9CAC00B2F436 /* MoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 266370DE2C7F9CAC00B2F436 /* MoreViewController.xib */; };
+		266370E32C7F9F9F00B2F436 /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266370E12C7F9F9F00B2F436 /* MoreTableViewCell.swift */; };
+		266370E42C7F9F9F00B2F436 /* MoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 266370E22C7F9F9F00B2F436 /* MoreTableViewCell.xib */; };
+		266370E62C7FA2CA00B2F436 /* MoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266370E52C7FA2CA00B2F436 /* MoreViewModel.swift */; };
 		267FDDBE2C6E625B0074CEEF /* URLDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267FDDBD2C6E625B0074CEEF /* URLDefines.swift */; };
 		267FDDC02C6E62CD0074CEEF /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267FDDBF2C6E62CD0074CEEF /* DataLoader.swift */; };
 		267FDDC22C6E63270074CEEF /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267FDDC12C6E63270074CEEF /* UIImageView+.swift */; };
@@ -42,7 +53,7 @@
 		26AB11522C77A4DC00EAC9B5 /* BookmarkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26AB11502C77A4DC00EAC9B5 /* BookmarkCell.xib */; };
 		26AB11542C77A4FB00EAC9B5 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AB11532C77A4FB00EAC9B5 /* BookmarkViewController.swift */; };
 		26AB11562C77A50300EAC9B5 /* BookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AB11552C77A50300EAC9B5 /* BookmarkViewModel.swift */; };
-		26AB11582C77A97A00EAC9B5 /* My.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AB11572C77A97A00EAC9B5 /* My.swift */; };
+		26AB11582C77A97A00EAC9B5 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AB11572C77A97A00EAC9B5 /* Favorite.swift */; };
 		26AB115B2C77B2E400EAC9B5 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AB115A2C77B2E400EAC9B5 /* FavoriteViewController.swift */; };
 		26AB115D2C77B2F000EAC9B5 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AB115C2C77B2F000EAC9B5 /* FavoriteViewModel.swift */; };
 		26B3C7AA2C5FC4AE0045A050 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26B3C7A92C5FC4AE0045A050 /* Color.xcassets */; };
@@ -66,6 +77,17 @@
 		262EA5C42C55387C00162FC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		262EA5C72C55387C00162FC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		262EA5C92C55387C00162FC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		266370CF2C7F533A00B2F436 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		266370D02C7F533A00B2F436 /* VideoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoViewController.xib; sourceTree = "<group>"; };
+		266370D32C7F6CFF00B2F436 /* VideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewModel.swift; sourceTree = "<group>"; };
+		266370D52C7F6E8500B2F436 /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
+		266370D72C7F6EBE00B2F436 /* VideoListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListItem.swift; sourceTree = "<group>"; };
+		266370D92C7F6EDB00B2F436 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		266370DD2C7F9CAC00B2F436 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		266370DE2C7F9CAC00B2F436 /* MoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreViewController.xib; sourceTree = "<group>"; };
+		266370E12C7F9F9F00B2F436 /* MoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewCell.swift; sourceTree = "<group>"; };
+		266370E22C7F9F9F00B2F436 /* MoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreTableViewCell.xib; sourceTree = "<group>"; };
+		266370E52C7FA2CA00B2F436 /* MoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewModel.swift; sourceTree = "<group>"; };
 		267FDDBD2C6E625B0074CEEF /* URLDefines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLDefines.swift; sourceTree = "<group>"; };
 		267FDDBF2C6E62CD0074CEEF /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		267FDDC12C6E63270074CEEF /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
@@ -96,7 +118,7 @@
 		26AB11502C77A4DC00EAC9B5 /* BookmarkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookmarkCell.xib; sourceTree = "<group>"; };
 		26AB11532C77A4FB00EAC9B5 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
 		26AB11552C77A50300EAC9B5 /* BookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewModel.swift; sourceTree = "<group>"; };
-		26AB11572C77A97A00EAC9B5 /* My.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My.swift; sourceTree = "<group>"; };
+		26AB11572C77A97A00EAC9B5 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		26AB115A2C77B2E400EAC9B5 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		26AB115C2C77B2F000EAC9B5 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		26B3C7A92C5FC4AE0045A050 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
@@ -147,6 +169,8 @@
 				267FDDBC2C6E62460074CEEF /* URLDefines */,
 				2699BD7A2C6505DF00CB3DF0 /* Home */,
 				26AB114B2C77A28B00EAC9B5 /* My */,
+				266370CE2C7F532900B2F436 /* Video */,
+				266370DB2C7F9C9400B2F436 /* More */,
 				2699BD7D2C65069700CB3DF0 /* Login */,
 				262EA5BB2C55387B00162FC0 /* AppDelegate.swift */,
 				262EA5BD2C55387B00162FC0 /* SceneDelegate.swift */,
@@ -157,6 +181,28 @@
 				262EA5C92C55387C00162FC0 /* Info.plist */,
 			);
 			path = KTV;
+			sourceTree = "<group>";
+		};
+		266370CE2C7F532900B2F436 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				266370D32C7F6CFF00B2F436 /* VideoViewModel.swift */,
+				266370CF2C7F533A00B2F436 /* VideoViewController.swift */,
+				266370D02C7F533A00B2F436 /* VideoViewController.xib */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		266370DB2C7F9C9400B2F436 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				266370E12C7F9F9F00B2F436 /* MoreTableViewCell.swift */,
+				266370E22C7F9F9F00B2F436 /* MoreTableViewCell.xib */,
+				266370DD2C7F9CAC00B2F436 /* MoreViewController.swift */,
+				266370DE2C7F9CAC00B2F436 /* MoreViewController.xib */,
+				266370E52C7FA2CA00B2F436 /* MoreViewModel.swift */,
+			);
+			path = More;
 			sourceTree = "<group>";
 		};
 		267FDDBC2C6E62460074CEEF /* URLDefines */ = {
@@ -183,7 +229,10 @@
 			isa = PBXGroup;
 			children = (
 				26975D7D2C6E1856009D91D9 /* Home.swift */,
-				26AB11572C77A97A00EAC9B5 /* My.swift */,
+				266370D52C7F6E8500B2F436 /* Bookmark.swift */,
+				26AB11572C77A97A00EAC9B5 /* Favorite.swift */,
+				266370D72C7F6EBE00B2F436 /* VideoListItem.swift */,
+				266370D92C7F6EDB00B2F436 /* Video.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -338,9 +387,11 @@
 				26B3C7AA2C5FC4AE0045A050 /* Color.xcassets in Resources */,
 				268513162C6673A9008141AC /* VideoListItemCell.xib in Resources */,
 				262EA5C52C55387C00162FC0 /* Assets.xcassets in Resources */,
+				266370E02C7F9CAC00B2F436 /* MoreViewController.xib in Resources */,
 				26C1089A2C6A023C0013821C /* HomeRankingItemCell.xib in Resources */,
 				268513122C667382008141AC /* HomeFooterView.xib in Resources */,
 				26C108A82C6CEEE60013821C /* HomeRecentWatchContainerCell.xib in Resources */,
+				266370E42C7F9F9F00B2F436 /* MoreTableViewCell.xib in Resources */,
 				2699BD842C6506F300CB3DF0 /* HomeVideoCell.xib in Resources */,
 				26AB11522C77A4DC00EAC9B5 /* BookmarkCell.xib in Resources */,
 				262EA5C32C55387B00162FC0 /* Main.storyboard in Resources */,
@@ -351,6 +402,7 @@
 				2685130A2C6672E8008141AC /* HomeRecommendContainerCell.xib in Resources */,
 				26C108962C69FE5C0013821C /* HomeRankingContainerCell.xib in Resources */,
 				26975D782C6DE8B9009D91D9 /* video.json in Resources */,
+				266370D22C7F533A00B2F436 /* VideoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,7 +420,9 @@
 				26C108992C6A023C0013821C /* HomeRankingItemCell.swift in Sources */,
 				268513092C6672E8008141AC /* HomeRecommendContainerCell.swift in Sources */,
 				26C108952C69FE5C0013821C /* HomeRankingContainerCell.swift in Sources */,
+				266370D12C7F533A00B2F436 /* VideoViewController.swift in Sources */,
 				268512FE2C66684A008141AC /* HomeSection.swift in Sources */,
+				266370DF2C7F9CAC00B2F436 /* MoreViewController.swift in Sources */,
 				26975D812C6E2D2B009D91D9 /* DateFormatter+.swift in Sources */,
 				262EA5BE2C55387B00162FC0 /* SceneDelegate.swift in Sources */,
 				26C108A72C6CEEE60013821C /* HomeRecentWatchContainerCell.swift in Sources */,
@@ -378,10 +432,14 @@
 				268513152C6673A9008141AC /* VideoListItemCell.swift in Sources */,
 				26975D832C6E3BDE009D91D9 /* DateComponentsFormatter+.swift in Sources */,
 				268513002C666EA1008141AC /* TabBarViewController.swift in Sources */,
-				26AB11582C77A97A00EAC9B5 /* My.swift in Sources */,
+				266370D42C7F6CFF00B2F436 /* VideoViewModel.swift in Sources */,
+				266370DA2C7F6EDB00B2F436 /* Video.swift in Sources */,
+				26AB11582C77A97A00EAC9B5 /* Favorite.swift in Sources */,
+				266370E32C7F9F9F00B2F436 /* MoreTableViewCell.swift in Sources */,
 				26AB115D2C77B2F000EAC9B5 /* FavoriteViewModel.swift in Sources */,
 				26AB115B2C77B2E400EAC9B5 /* FavoriteViewController.swift in Sources */,
 				2699BD832C6506F300CB3DF0 /* HomeVideoCell.swift in Sources */,
+				266370D62C7F6E8500B2F436 /* Bookmark.swift in Sources */,
 				267FDDBE2C6E625B0074CEEF /* URLDefines.swift in Sources */,
 				2685130D2C66736E008141AC /* HomeHeaderView.swift in Sources */,
 				26AB11512C77A4DC00EAC9B5 /* BookmarkCell.swift in Sources */,
@@ -390,7 +448,9 @@
 				26AB11542C77A4FB00EAC9B5 /* BookmarkViewController.swift in Sources */,
 				2699BD7C2C6505ED00CB3DF0 /* HomeViewController.swift in Sources */,
 				26AB114D2C77A2AC00EAC9B5 /* MyViewController.swift in Sources */,
+				266370D82C7F6EBE00B2F436 /* VideoListItem.swift in Sources */,
 				26C1A9DE2C763485001432ED /* HomeRecommendViewModel.swift in Sources */,
+				266370E62C7FA2CA00B2F436 /* MoreViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

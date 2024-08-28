@@ -37,12 +37,4 @@ extension Home {
         let title: String
         let channel: String
     }
-    
-    struct VideoListItem: Decodable {
-        let imageUrl: URL
-        let title: String
-        let playtime: Double
-        let channel: String
-        let videoId: Int
-    }
 }

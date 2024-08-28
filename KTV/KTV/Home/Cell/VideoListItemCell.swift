@@ -52,7 +52,7 @@ class VideoListItemCell: UITableViewCell {
         playTimeLabel.text = nil
     }
     
-    func setData(_ data: Home.VideoListItem, rank: Int?) {
+    func setData(_ data: VideoListItem, rank: Int?) {
         rankLabel.isHidden = rank == nil
         
         if let rank {

@@ -29,6 +29,7 @@
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HbE-4G-lo4">
                                                 <rect key="frame" x="0.0" y="0.0" width="107" height="59"/>
+                                                <color key="backgroundColor" name="gray-1"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62N-2E-XaQ" userLabel="Rank Label">
                                                 <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
@@ -91,10 +92,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </stackView>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                         </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="dSE-Tv-QIT" firstAttribute="top" secondItem="JU5-6I-d8q" secondAttribute="top" id="4yM-RI-uZk"/>
                             <constraint firstItem="dSE-Tv-QIT" firstAttribute="top" secondItem="JU5-6I-d8q" secondAttribute="top" id="Eqp-iD-PVC"/>
@@ -110,7 +114,7 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" name="bg"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="JU5-6I-d8q" secondAttribute="trailing" id="JF8-3h-AKR"/>
                     <constraint firstItem="JU5-6I-d8q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="YIe-g7-53l"/>
@@ -119,6 +123,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="descriptionLabel" destination="91g-Mb-2hX" id="R7O-wh-RGB"/>
                 <outlet property="playTimeBGView" destination="YRE-Ik-FG7" id="XzY-5A-FE4"/>
