@@ -11,6 +11,7 @@ class VideoViewController: UIViewController {
 
     // MARK: - 제어 패널
     @IBOutlet weak var portraitControlPannel: UIView!
+    @IBOutlet weak var playerView: PlayerView!
     @IBOutlet weak var playButton: UIButton!
     
     // MARK: - scrollView
@@ -57,6 +58,7 @@ class VideoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        playerView.delegate = self
         channelThumbnailImageView.layer.cornerRadius = 14
         setupRecommendTableView()
         bindViewModel()
@@ -70,6 +72,9 @@ class VideoViewController: UIViewController {
     }
     
     private func setupData(_ video: Video) {
+        playerView.set(url: video.videoURL)
+        playerView.play()
+        
         titleLabel.text = video.title
         channelThumbnailImageView.loadImage(url: video.channelImageUrl)
         channelNameLabel.text = video.channel
@@ -95,12 +100,21 @@ extension VideoViewController {
     }
     
     @IBAction func rewindDidTap(_ sender: UIButton) {
+        playerView.rewind()
     }
     
     @IBAction func playDidTap(_ sender: UIButton) {
+        if playerView.isPlaying {
+            playerView.pause()
+        } else {
+            playerView.play()
+        }
+        
+        updatePlayButton(isPlaying: playerView.isPlaying)
     }
     
     @IBAction func fastforwardDidTap(_ sender: UIButton) {
+        playerView.forward()
     }
     
     @IBAction func moreDidTap(_ sender: UIButton) {
@@ -109,6 +123,28 @@ extension VideoViewController {
     }
     
     @IBAction func expandDidTap(_ sender: UIButton) {
+    }
+    
+    private func updatePlayButton(isPlaying: Bool) {
+        let playImage = isPlaying ? UIImage(named: "small_pause") : UIImage(named: "small_play")
+        
+        playButton.setImage(playImage, for: .normal)
+    }
+}
+
+extension VideoViewController: PlayerViewDelegate {
+    func playerViewReadyToPlay(_ playerView: PlayerView) {
+        updatePlayButton(isPlaying: playerView.isPlaying)
+    }
+    
+    func playerView(_ playerView: PlayerView, didPlay playTime: Double, playableTime: Double) {
+        
+    }
+    
+    func playerViewDidFinishToPlay(_ playerView: PlayerView) {
+        // 재생이 끝나면 시간을 0으로 초기화
+        playerView.seek(to: 0)
+        updatePlayButton(isPlaying: false)
     }
 }
 
