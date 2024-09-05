@@ -14,6 +14,15 @@ class VideoViewController: UIViewController {
     @IBOutlet weak var playerView: PlayerView!
     @IBOutlet weak var playButton: UIButton!
     
+    @IBOutlet var playerViewBottomConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var landscapeControlPannel: UIView!
+    @IBOutlet weak var landscapePlayButton: UIButton!
+    @IBOutlet weak var landscapeTitleLabel: UILabel!
+    @IBOutlet weak var landscapePlaytime: UILabel!
+    
+    @IBOutlet weak var seekbarView: SeekbarView!
+    
     // MARK: - scrollView
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var updateDateLabel: UILabel!
@@ -32,7 +41,11 @@ class VideoViewController: UIViewController {
     private let viewModel = VideoViewModel()
     private var isControlPannelHidden: Bool = true {
         didSet {
-            portraitControlPannel.isHidden = isControlPannelHidden
+            if isLandscape(size: view.frame.size) {
+                landscapeControlPannel.isHidden = isControlPannelHidden
+            } else {
+                portraitControlPannel.isHidden = isControlPannelHidden
+            }
         }
     }
     
@@ -59,10 +72,21 @@ class VideoViewController: UIViewController {
         super.viewDidLoad()
 
         playerView.delegate = self
+        seekbarView.delegate = self
         channelThumbnailImageView.layer.cornerRadius = 14
         setupRecommendTableView()
         bindViewModel()
         viewModel.request()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        switchControlPannel(size: size)
+        playerViewBottomConstraint.isActive = isLandscape(size: size)
+        super.viewWillTransition(to: size, with: coordinator)
+    }
+    
+    private func isLandscape(size: CGSize) -> Bool {
+        size.width > size.height
     }
     
     private func bindViewModel() {
@@ -76,6 +100,7 @@ class VideoViewController: UIViewController {
         playerView.play()
         
         titleLabel.text = video.title
+        landscapeTitleLabel.text = video.title
         channelThumbnailImageView.loadImage(url: video.channelImageUrl)
         channelNameLabel.text = video.channel
         updateDateLabel.text = VideoViewController.dateFormatter.string(
@@ -86,11 +111,21 @@ class VideoViewController: UIViewController {
         recommendTableView.reloadData()
     }
     
-    @IBAction func commentDidTap(_ sender: UIButton) {
-    }
+    @IBAction func commentDidTap(_ sender: UIButton) {}
 }
 
 extension VideoViewController {
+    private func switchControlPannel(size: CGSize) {
+        // 패널을 표시해야하는 상황이면
+        guard isControlPannelHidden == false else { return }
+        
+        // 가로 모드가 아니면 가로 모드 컨트롤 패널 표시
+        landscapeControlPannel.isHidden = !isLandscape(size: size)
+        // 가로 모드면 세로 모드 컨트롤 패널 숨김
+        portraitControlPannel.isHidden = isLandscape(size: size)
+    }
+    
+    // 컨테이너뷰를 탭하면 영상 컨트롤 패널을 숨김/표시하도록
     @IBAction func toggleControlPannel(_ sender: UITapGestureRecognizer) {
         isControlPannelHidden.toggle()
     }
@@ -125,26 +160,52 @@ extension VideoViewController {
     @IBAction func expandDidTap(_ sender: UIButton) {
     }
     
+    @IBAction func shrinkDidTap(_ sender: UIButton) {
+    }
+    
     private func updatePlayButton(isPlaying: Bool) {
         let playImage = isPlaying ? UIImage(named: "small_pause") : UIImage(named: "small_play")
         
         playButton.setImage(playImage, for: .normal)
+        
+        let landscapePlayImage = isPlaying ? UIImage(named: "big_pause") : UIImage(named: "big_play")
+        
+        landscapePlayButton.setImage(landscapePlayImage, for: .normal)
     }
 }
 
 extension VideoViewController: PlayerViewDelegate {
     func playerViewReadyToPlay(_ playerView: PlayerView) {
+        seekbarView.setTotalPlayTime(playerView.totalPlayTime)
         updatePlayButton(isPlaying: playerView.isPlaying)
+        updatePlayTime(0, totalPlayTime: playerView.totalPlayTime)
     }
     
     func playerView(_ playerView: PlayerView, didPlay playTime: Double, playableTime: Double) {
-        
+        seekbarView.setPlayTime(playTime, playableTime: playableTime)
+        updatePlayTime(playTime, totalPlayTime: playerView.totalPlayTime)
     }
     
     func playerViewDidFinishToPlay(_ playerView: PlayerView) {
         // 재생이 끝나면 시간을 0으로 초기화
         playerView.seek(to: 0)
         updatePlayButton(isPlaying: false)
+    }
+    
+    private func updatePlayTime(_ playTime: Double, totalPlayTime: Double) {
+        guard let playTimeText = DateComponentsFormatter.playTimeFormatter.string(from: playTime),
+              let totalPlayTimeText = DateComponentsFormatter.playTimeFormatter.string(from: totalPlayTime) else {
+            landscapePlaytime.text = nil
+            return
+        }
+        
+        landscapePlaytime.text = "\(playTimeText) / \(totalPlayTimeText)"
+    }
+}
+
+extension VideoViewController: SeekbarViewDelegate {
+    func seekbar(_ seekbar: SeekbarView, seekToPercent percent: Double) {
+        playerView.seek(to: percent)
     }
 }
 

@@ -122,10 +122,10 @@ extension PlayerView {
             // 0.5초마다 observing 되도록
             forInterval: CMTime(seconds: 0.5, preferredTimescale: 10),
             queue: .main,
-            using: { [weak self] time in
+            using: { [weak self, weak player] time in
                 guard let self else { return }
                 
-                guard let currentItem = player.currentItem,
+                guard let currentItem = player?.currentItem,
                       currentItem.status == .readyToPlay,
                       // 현재 재생 가능한 time range를 가져오기
                       let timeRange = (currentItem.loadedTimeRanges as? [CMTimeRange])?.first else { return }

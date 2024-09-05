@@ -29,6 +29,7 @@ class MoreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupCornerRadius()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 48

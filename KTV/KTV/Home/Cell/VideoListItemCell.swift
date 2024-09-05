@@ -63,7 +63,6 @@ class VideoListItemCell: UITableViewCell {
         titleLabel.text = data.title
         descriptionLabel.text = data.channel
         
-        let timeFormatter = DateComponentsFormatter().convertTimeStyle()
-        playTimeLabel.text = timeFormatter.string(from: data.playtime)
+        playTimeLabel.text = DateComponentsFormatter.playTimeFormatter.string(from: data.playtime)
     }
 }

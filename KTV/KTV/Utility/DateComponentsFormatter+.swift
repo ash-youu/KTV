@@ -8,11 +8,12 @@
 import Foundation
 
 extension DateComponentsFormatter {
-    func convertTimeStyle() -> DateComponentsFormatter {
-        self.unitsStyle = .positional
-        self.zeroFormattingBehavior = .pad
-        self.allowedUnits = [.minute, .second]
+    static let playTimeFormatter: DateComponentsFormatter = {
+        let timeFormatter = DateComponentsFormatter()
+        timeFormatter.unitsStyle = .positional
+        timeFormatter.zeroFormattingBehavior = .pad
+        timeFormatter.allowedUnits = [.minute, .second]
         
-        return self
-    }
+        return timeFormatter
+    }()
 }

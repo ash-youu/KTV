@@ -17,7 +17,7 @@ extension DateFormatter {
     
     @discardableResult
     func convertDateVideoViewStyle() -> DateFormatter {
-        self.dateFormat = "yyyy.MMdd"
+        self.dateFormat = "yyyy.MM.dd"
         
         return self
     }
