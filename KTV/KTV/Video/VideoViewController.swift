@@ -158,9 +158,11 @@ extension VideoViewController {
     }
     
     @IBAction func expandDidTap(_ sender: UIButton) {
+        rotateScene(landscape: true)
     }
     
     @IBAction func shrinkDidTap(_ sender: UIButton) {
+        rotateScene(landscape: false)
     }
     
     private func updatePlayButton(isPlaying: Bool) {
@@ -171,6 +173,18 @@ extension VideoViewController {
         let landscapePlayImage = isPlaying ? UIImage(named: "big_pause") : UIImage(named: "big_play")
         
         landscapePlayButton.setImage(landscapePlayImage, for: .normal)
+    }
+    
+    private func rotateScene(landscape: Bool) {
+        if #available(iOS 16.0, *) {
+            view.window?.windowScene?.requestGeometryUpdate(
+                .iOS(interfaceOrientations: landscape ? .landscapeRight : .portrait)
+            )
+        } else {
+            let orientation: UIInterfaceOrientation = landscape ? .landscapeRight : .portrait
+            UIDevice.current.setValue(orientation.rawValue, forKey: "orientation")
+            UIViewController.attemptRotationToDeviceOrientation()
+        }
     }
 }
 
