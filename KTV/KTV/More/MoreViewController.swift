@@ -38,8 +38,18 @@ class MoreViewController: UIViewController {
             forCellReuseIdentifier: MoreTableViewCell.identifier)
     }
 
-    @IBAction func closeDidTap(_ sender: UIButton) {
-        dismiss(animated: false)
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        setupCornerRadius()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        coordinator.animate { [weak self] _ in
+            self?.setupCornerRadius()
+        }
+        
+        super.viewWillTransition(to: size, with: coordinator)
     }
     
     private func setupCornerRadius() {
@@ -52,6 +62,10 @@ class MoreViewController: UIViewController {
         let maskLayer = CAShapeLayer()
         maskLayer.path = path.cgPath
         headerView.layer.mask = maskLayer
+    }
+    
+    @IBAction func closeDidTap(_ sender: UIButton) {
+        dismiss(animated: false)
     }
 }
 
