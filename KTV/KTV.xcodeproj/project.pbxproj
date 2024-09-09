@@ -38,6 +38,9 @@
 		268513122C667382008141AC /* HomeFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 268513102C667382008141AC /* HomeFooterView.xib */; };
 		268513152C6673A9008141AC /* VideoListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268513132C6673A9008141AC /* VideoListItemCell.swift */; };
 		268513162C6673A9008141AC /* VideoListItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 268513142C6673A9008141AC /* VideoListItemCell.xib */; };
+		269211FC2C8F17E4008A9671 /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269211FB2C8F17E4008A9671 /* LiveViewController.swift */; };
+		269211FF2C8F3A39008A9671 /* LiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269211FD2C8F3A39008A9671 /* LiveCell.swift */; };
+		269212002C8F3A39008A9671 /* LiveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 269211FE2C8F3A39008A9671 /* LiveCell.xib */; };
 		26975D782C6DE8B9009D91D9 /* video.json in Resources */ = {isa = PBXBuildFile; fileRef = 26975D742C6DE8B9009D91D9 /* video.json */; };
 		26975D792C6DE8B9009D91D9 /* home.json in Resources */ = {isa = PBXBuildFile; fileRef = 26975D752C6DE8B9009D91D9 /* home.json */; };
 		26975D7A2C6DE8B9009D91D9 /* live.json in Resources */ = {isa = PBXBuildFile; fileRef = 26975D762C6DE8B9009D91D9 /* live.json */; };
@@ -104,6 +107,9 @@
 		268513102C667382008141AC /* HomeFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeFooterView.xib; sourceTree = "<group>"; };
 		268513132C6673A9008141AC /* VideoListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListItemCell.swift; sourceTree = "<group>"; };
 		268513142C6673A9008141AC /* VideoListItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoListItemCell.xib; sourceTree = "<group>"; };
+		269211FB2C8F17E4008A9671 /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
+		269211FD2C8F3A39008A9671 /* LiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCell.swift; sourceTree = "<group>"; };
+		269211FE2C8F3A39008A9671 /* LiveCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveCell.xib; sourceTree = "<group>"; };
 		26975D732C6DE7A9009D91D9 /* bookmark.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bookmark.json; sourceTree = "<group>"; };
 		26975D742C6DE8B9009D91D9 /* video.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = video.json; sourceTree = "<group>"; };
 		26975D752C6DE8B9009D91D9 /* home.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = home.json; sourceTree = "<group>"; };
@@ -167,6 +173,7 @@
 		262EA5BA2C55387B00162FC0 /* KTV */ = {
 			isa = PBXGroup;
 			children = (
+				269211FA2C8F17C2008A9671 /* Live */,
 				26975D722C6DE730009D91D9 /* JSON */,
 				26975D7F2C6E2D13009D91D9 /* Utility */,
 				26975D7C2C6E1842009D91D9 /* Model */,
@@ -217,6 +224,16 @@
 				267FDDBD2C6E625B0074CEEF /* URLDefines.swift */,
 			);
 			path = URLDefines;
+			sourceTree = "<group>";
+		};
+		269211FA2C8F17C2008A9671 /* Live */ = {
+			isa = PBXGroup;
+			children = (
+				269211FB2C8F17E4008A9671 /* LiveViewController.swift */,
+				269211FD2C8F3A39008A9671 /* LiveCell.swift */,
+				269211FE2C8F3A39008A9671 /* LiveCell.xib */,
+			);
+			path = Live;
 			sourceTree = "<group>";
 		};
 		26975D722C6DE730009D91D9 /* JSON */ = {
@@ -409,6 +426,7 @@
 				26C108962C69FE5C0013821C /* HomeRankingContainerCell.xib in Resources */,
 				26975D782C6DE8B9009D91D9 /* video.json in Resources */,
 				266370D22C7F533A00B2F436 /* VideoViewController.xib in Resources */,
+				269212002C8F3A39008A9671 /* LiveCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +462,8 @@
 				266370E32C7F9F9F00B2F436 /* MoreTableViewCell.swift in Sources */,
 				26AB115D2C77B2F000EAC9B5 /* FavoriteViewModel.swift in Sources */,
 				26AB115B2C77B2E400EAC9B5 /* FavoriteViewController.swift in Sources */,
+				269211FF2C8F3A39008A9671 /* LiveCell.swift in Sources */,
+				269211FC2C8F17E4008A9671 /* LiveViewController.swift in Sources */,
 				2699BD832C6506F300CB3DF0 /* HomeVideoCell.swift in Sources */,
 				266370D62C7F6E8500B2F436 /* Bookmark.swift in Sources */,
 				267FDDBE2C6E625B0074CEEF /* URLDefines.swift in Sources */,
