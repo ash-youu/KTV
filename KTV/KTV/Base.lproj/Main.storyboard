@@ -115,7 +115,7 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="CaE-Vy-BhA" firstAttribute="leading" secondItem="hbH-7N-sRt" secondAttribute="trailing" constant="3" id="0DQ-AN-wyL"/>
-                                            <constraint firstItem="hbH-7N-sRt" firstAttribute="leading" secondItem="HE2-sh-05i" secondAttribute="leading" constant="224" id="2TJ-df-EbO"/>
+                                            <constraint firstItem="hbH-7N-sRt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HE2-sh-05i" secondAttribute="leading" id="2TJ-df-EbO"/>
                                             <constraint firstItem="fGl-4B-KBl" firstAttribute="top" secondItem="HE2-sh-05i" secondAttribute="top" id="31T-d6-ej1"/>
                                             <constraint firstAttribute="bottom" secondItem="CaE-Vy-BhA" secondAttribute="bottom" constant="5" id="MIa-Gs-QKW"/>
                                             <constraint firstItem="CaE-Vy-BhA" firstAttribute="top" secondItem="HE2-sh-05i" secondAttribute="top" constant="6" id="Ned-Zq-x4a"/>

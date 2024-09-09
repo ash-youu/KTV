@@ -15,7 +15,7 @@ class LiveCell: UICollectionViewCell {
     @IBOutlet weak var liveLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var channelLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,5 +23,11 @@ class LiveCell: UICollectionViewCell {
         liveLabel.layer.cornerRadius = 5
         liveLabel.clipsToBounds = true
         imageView.layer.cornerRadius = 5
+    }
+    
+    func setData(_ data: Live.Item) {
+        imageView.loadImage(url: data.thumbnailUrl)
+        titleLabel.text = data.title
+        channelLabel.text = data.channel
     }
 }

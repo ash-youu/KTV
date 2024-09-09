@@ -41,6 +41,8 @@
 		269211FC2C8F17E4008A9671 /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269211FB2C8F17E4008A9671 /* LiveViewController.swift */; };
 		269211FF2C8F3A39008A9671 /* LiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269211FD2C8F3A39008A9671 /* LiveCell.swift */; };
 		269212002C8F3A39008A9671 /* LiveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 269211FE2C8F3A39008A9671 /* LiveCell.xib */; };
+		269212022C8F46BC008A9671 /* Live.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269212012C8F46BC008A9671 /* Live.swift */; };
+		269212042C8F4703008A9671 /* LiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269212032C8F4703008A9671 /* LiveViewModel.swift */; };
 		26975D782C6DE8B9009D91D9 /* video.json in Resources */ = {isa = PBXBuildFile; fileRef = 26975D742C6DE8B9009D91D9 /* video.json */; };
 		26975D792C6DE8B9009D91D9 /* home.json in Resources */ = {isa = PBXBuildFile; fileRef = 26975D752C6DE8B9009D91D9 /* home.json */; };
 		26975D7A2C6DE8B9009D91D9 /* live.json in Resources */ = {isa = PBXBuildFile; fileRef = 26975D762C6DE8B9009D91D9 /* live.json */; };
@@ -110,6 +112,8 @@
 		269211FB2C8F17E4008A9671 /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
 		269211FD2C8F3A39008A9671 /* LiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCell.swift; sourceTree = "<group>"; };
 		269211FE2C8F3A39008A9671 /* LiveCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LiveCell.xib; sourceTree = "<group>"; };
+		269212012C8F46BC008A9671 /* Live.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Live.swift; sourceTree = "<group>"; };
+		269212032C8F4703008A9671 /* LiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewModel.swift; sourceTree = "<group>"; };
 		26975D732C6DE7A9009D91D9 /* bookmark.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bookmark.json; sourceTree = "<group>"; };
 		26975D742C6DE8B9009D91D9 /* video.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = video.json; sourceTree = "<group>"; };
 		26975D752C6DE8B9009D91D9 /* home.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = home.json; sourceTree = "<group>"; };
@@ -230,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				269211FB2C8F17E4008A9671 /* LiveViewController.swift */,
+				269212032C8F4703008A9671 /* LiveViewModel.swift */,
 				269211FD2C8F3A39008A9671 /* LiveCell.swift */,
 				269211FE2C8F3A39008A9671 /* LiveCell.xib */,
 			);
@@ -256,6 +261,7 @@
 				26AB11572C77A97A00EAC9B5 /* Favorite.swift */,
 				266370D72C7F6EBE00B2F436 /* VideoListItem.swift */,
 				266370D92C7F6EDB00B2F436 /* Video.swift */,
+				269212012C8F46BC008A9671 /* Live.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -453,6 +459,7 @@
 				268513112C667382008141AC /* HomeFooterView.swift in Sources */,
 				267FDDC22C6E63270074CEEF /* UIImageView+.swift in Sources */,
 				26C108A32C6A164C0013821C /* HomeRecentWatchItemCell.swift in Sources */,
+				269212022C8F46BC008A9671 /* Live.swift in Sources */,
 				268513152C6673A9008141AC /* VideoListItemCell.swift in Sources */,
 				26975D832C6E3BDE009D91D9 /* DateComponentsFormatter+.swift in Sources */,
 				268513002C666EA1008141AC /* TabBarViewController.swift in Sources */,
@@ -470,6 +477,7 @@
 				266728022C88D0DE00ED7CE7 /* SeekbarView.swift in Sources */,
 				2685130D2C66736E008141AC /* HomeHeaderView.swift in Sources */,
 				26AB11512C77A4DC00EAC9B5 /* BookmarkCell.swift in Sources */,
+				269212042C8F4703008A9671 /* LiveViewModel.swift in Sources */,
 				26AB11562C77A50300EAC9B5 /* BookmarkViewModel.swift in Sources */,
 				26975D7E2C6E1856009D91D9 /* Home.swift in Sources */,
 				26AB11542C77A4FB00EAC9B5 /* BookmarkViewController.swift in Sources */,

@@ -79,7 +79,7 @@
                 <constraint firstAttribute="bottom" secondItem="drt-yB-90a" secondAttribute="bottom" id="zbm-KM-DMM"/>
             </constraints>
             <connections>
-                <outlet property="descriptionLabel" destination="chh-fQ-Y2t" id="ntO-Va-fkt"/>
+                <outlet property="channelLabel" destination="chh-fQ-Y2t" id="ntO-Va-fkt"/>
                 <outlet property="imageView" destination="bbE-Jd-tTf" id="kgJ-bv-XEq"/>
                 <outlet property="liveLabel" destination="Hjq-sV-TRA" id="akL-bY-PIt"/>
                 <outlet property="titleLabel" destination="Hjq-sV-TRA" id="iox-h5-n7u"/>
