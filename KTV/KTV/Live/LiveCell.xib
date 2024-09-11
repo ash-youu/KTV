@@ -81,7 +81,7 @@
             <connections>
                 <outlet property="channelLabel" destination="chh-fQ-Y2t" id="ntO-Va-fkt"/>
                 <outlet property="imageView" destination="bbE-Jd-tTf" id="kgJ-bv-XEq"/>
-                <outlet property="liveLabel" destination="Hjq-sV-TRA" id="akL-bY-PIt"/>
+                <outlet property="liveLabel" destination="Bat-Ku-Xju" id="4k5-pN-qdq"/>
                 <outlet property="titleLabel" destination="Hjq-sV-TRA" id="iox-h5-n7u"/>
             </connections>
             <point key="canvasLocation" x="131" y="-11"/>
