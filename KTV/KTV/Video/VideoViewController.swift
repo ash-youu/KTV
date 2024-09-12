@@ -38,6 +38,8 @@ class VideoViewController: UIViewController {
     
     private var contentSizeObservation: NSKeyValueObservation?
     
+    @IBOutlet weak var chattingView: ChattingView!
+    
     private let viewModel = VideoViewModel()
     private var isControlPannelHidden: Bool = true {
         didSet {
@@ -48,6 +50,8 @@ class VideoViewController: UIViewController {
             }
         }
     }
+    
+    var isLiveMode: Bool = false
     
     private static let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
@@ -77,9 +81,20 @@ class VideoViewController: UIViewController {
         setupRecommendTableView()
         bindViewModel()
         viewModel.request()
+        
+        chattingView.delegate = self
+        
+        if isLiveMode {
+            chattingView.isHidden = false
+        } else {
+            chattingView.isHidden = true
+        }
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        chattingView.isHidden = true
+        
+        view.layoutIfNeeded()
         switchControlPannel(size: size)
         playerViewBottomConstraint.isActive = isLandscape(size: size)
         super.viewWillTransition(to: size, with: coordinator)
@@ -111,7 +126,11 @@ class VideoViewController: UIViewController {
         recommendTableView.reloadData()
     }
     
-    @IBAction func commentDidTap(_ sender: UIButton) {}
+    @IBAction func commentDidTap(_ sender: UIButton) {
+        if isLiveMode {
+            chattingView.isHidden = false
+        }
+    }
 }
 
 extension VideoViewController {
@@ -220,6 +239,12 @@ extension VideoViewController: PlayerViewDelegate {
 extension VideoViewController: SeekbarViewDelegate {
     func seekbar(_ seekbar: SeekbarView, seekToPercent percent: Double) {
         playerView.seek(to: percent)
+    }
+}
+
+extension VideoViewController: ChattingViewDelegate {
+    func liveChattingViewCloseDidTap(_ chattingView: UIView) {
+        chattingView.isHidden = true
     }
 }
 
