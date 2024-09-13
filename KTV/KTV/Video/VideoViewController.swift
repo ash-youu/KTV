@@ -39,6 +39,8 @@ class VideoViewController: UIViewController {
     private var contentSizeObservation: NSKeyValueObservation?
     
     @IBOutlet weak var chattingView: ChattingView!
+    @IBOutlet weak var chattingBottomConstraint: NSLayoutConstraint!
+    private let chattingHiddenBottomConstant: CGFloat = -500
     
     private let viewModel = VideoViewModel()
     private var isControlPannelHidden: Bool = true {
@@ -92,11 +94,23 @@ class VideoViewController: UIViewController {
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        chattingView.isHidden = true
-        
-        view.layoutIfNeeded()
         switchControlPannel(size: size)
         playerViewBottomConstraint.isActive = isLandscape(size: size)
+        
+        // 회전(가로모드)시 입력창 커서가 사라지도록
+        chattingView.textField.resignFirstResponder()
+        
+        // 회전(가로모드)시 채팅뷰가 밑으로 내려가서 보이지 않도록
+        if isLandscape(size: size) {
+            chattingBottomConstraint.constant = chattingHiddenBottomConstant
+        } else {
+            chattingBottomConstraint.constant = 0
+        }
+        
+        coordinator.animate { [weak self] _ in
+            self?.chattingView.collectionView.collectionViewLayout.invalidateLayout()
+        }
+        
         super.viewWillTransition(to: size, with: coordinator)
     }
     

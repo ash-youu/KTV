@@ -39,6 +39,10 @@ class ChattingView: UIView {
         delegate?.liveChattingViewCloseDidTap(self)
     }
     
+    @IBAction func dismissKeyboard(_ sender: Any) {
+        textField.resignFirstResponder()
+    }
+    
     private func bindViewModel() {
         viewModel.chatReceived = { [weak self] in
             self?.collectionView.reloadData()
@@ -56,7 +60,7 @@ class ChattingView: UIView {
     
     private func scrollToLatestIfNeeded() {
         // UI 기준 가장 아래쪽의 Y값 >= 컨텐츠 사이즈보다 같거나 넘어서면 가장 하단까지 갔음을 알 수 있다.
-        let isBottomOffset = collectionView.bounds.maxY >= collectionView.contentSize.height
+        let isBottomOffset = collectionView.bounds.maxY >= collectionView.contentSize.height - 200
         let isLastMessageMine = viewModel.messages.last?.isMine == true
         
         if isBottomOffset || isLastMessageMine {

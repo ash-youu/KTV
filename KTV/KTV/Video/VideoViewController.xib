@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="channelNameLabel" destination="Xi5-mz-It9" id="XXB-Bb-Mb5"/>
                 <outlet property="channelThumbnailImageView" destination="RPW-j9-kMp" id="G6I-SB-N6a"/>
+                <outlet property="chattingBottomConstraint" destination="AqS-T6-jqA" id="KEs-GY-W50"/>
                 <outlet property="chattingView" destination="CTV-H7-XSK" id="Oa5-vY-6ug"/>
                 <outlet property="favoriteButton" destination="qtK-RC-n2s" id="oie-9B-OfX"/>
                 <outlet property="landscapeControlPannel" destination="Yxx-7A-RPw" id="1Wn-TL-aPe"/>
@@ -542,12 +543,13 @@
                     <viewLayoutGuide key="safeArea" id="ohc-AL-rid"/>
                     <keyboardLayoutGuide key="keyboard" id="CMj-h4-YIc"/>
                     <color key="backgroundColor" name="bk-origin"/>
+                    <gestureRecognizers/>
                     <constraints>
                         <constraint firstItem="ohc-AL-rid" firstAttribute="bottom" secondItem="acv-zH-fTR" secondAttribute="bottom" priority="750" id="6jf-NS-R2m"/>
                         <constraint firstItem="DaN-wu-Z5D" firstAttribute="leading" secondItem="CTV-H7-XSK" secondAttribute="leading" id="CSe-dr-gpi"/>
                         <constraint firstItem="DaN-wu-Z5D" firstAttribute="top" secondItem="Fh2-k7-gtr" secondAttribute="bottom" id="NEI-Lc-OHZ"/>
                         <constraint firstAttribute="trailing" secondItem="DaN-wu-Z5D" secondAttribute="trailing" id="SIn-LT-Wno"/>
-                        <constraint firstItem="acv-zH-fTR" firstAttribute="bottom" secondItem="CMj-h4-YIc" secondAttribute="top" id="U7H-wd-ZWP"/>
+                        <constraint firstItem="acv-zH-fTR" firstAttribute="bottom" secondItem="CMj-h4-YIc" secondAttribute="top" priority="750" id="U7H-wd-ZWP"/>
                         <constraint firstAttribute="trailing" secondItem="Fh2-k7-gtr" secondAttribute="trailing" id="Y5k-Pc-QFM"/>
                         <constraint firstAttribute="trailing" secondItem="acv-zH-fTR" secondAttribute="trailing" id="bqK-yi-nWu"/>
                         <constraint firstItem="acv-zH-fTR" firstAttribute="leading" secondItem="CTV-H7-XSK" secondAttribute="leading" id="ekY-35-KBg"/>
@@ -558,6 +560,7 @@
                     <connections>
                         <outlet property="collectionView" destination="DaN-wu-Z5D" id="VAt-gb-yFp"/>
                         <outlet property="textField" destination="Gjh-da-lae" id="dqh-a8-6ZA"/>
+                        <outletCollection property="gestureRecognizers" destination="dpK-uF-jCu" appends="YES" id="a1F-ml-KJd"/>
                     </connections>
                 </view>
             </subviews>
@@ -587,6 +590,11 @@
         <tapGestureRecognizer id="5iX-aj-70r">
             <connections>
                 <action selector="toggleControlPannel:" destination="-1" id="tiR-Id-PYb"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="dpK-uF-jCu">
+            <connections>
+                <action selector="dismissKeyboard:" destination="CTV-H7-XSK" id="KJL-Qa-C33"/>
             </connections>
         </tapGestureRecognizer>
     </objects>
