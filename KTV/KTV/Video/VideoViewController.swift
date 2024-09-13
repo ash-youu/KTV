@@ -147,12 +147,13 @@ class VideoViewController: UIViewController {
     }
 }
 
+// MARK: - controlPannel 관련 메서드
 extension VideoViewController {
     private func switchControlPannel(size: CGSize) {
         // 패널을 표시해야하는 상황이면
         guard isControlPannelHidden == false else { return }
         
-        // 가로 모드가 아니면 가로 모드 컨트롤 패널 표시
+        // 세로 모드면 가로 모드 컨트롤 패널 숨김
         landscapeControlPannel.isHidden = !isLandscape(size: size)
         // 가로 모드면 세로 모드 컨트롤 패널 숨김
         portraitControlPannel.isHidden = isLandscape(size: size)
@@ -221,6 +222,7 @@ extension VideoViewController {
     }
 }
 
+// MARK: - PlayerViewDelegate
 extension VideoViewController: PlayerViewDelegate {
     func playerViewReadyToPlay(_ playerView: PlayerView) {
         seekbarView.setTotalPlayTime(playerView.totalPlayTime)
@@ -250,18 +252,21 @@ extension VideoViewController: PlayerViewDelegate {
     }
 }
 
+// MARK: - SeekbarViewDelegate
 extension VideoViewController: SeekbarViewDelegate {
     func seekbar(_ seekbar: SeekbarView, seekToPercent percent: Double) {
         playerView.seek(to: percent)
     }
 }
 
+// MARK: - ChattingViewDelegate
 extension VideoViewController: ChattingViewDelegate {
     func liveChattingViewCloseDidTap(_ chattingView: UIView) {
         chattingView.isHidden = true
     }
 }
 
+// MARK: - UITableViewDelegate, UITableViewDataSource
 extension VideoViewController: UITableViewDelegate, UITableViewDataSource {
     
     private func setupRecommendTableView() {

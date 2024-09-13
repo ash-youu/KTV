@@ -40,5 +40,4 @@ class LiveChattingMyMessageCollectionViewCell: UICollectionViewCell {
     func setText(_ text: String) {
         self.textLabel.text = text
     }
-
 }
