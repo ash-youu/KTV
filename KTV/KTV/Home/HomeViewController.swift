@@ -46,13 +46,19 @@ class HomeViewController: UIViewController {
         )
         
         collectionView.register(
-            UINib(nibName: HomeRankingContainerCell.identifier, bundle: nil),
-            forCellWithReuseIdentifier: HomeRankingContainerCell.identifier
+            UINib(nibName: HomeRankingHeaderView.identifier, bundle: nil),
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: HomeRankingHeaderView.identifier
         )
         
         collectionView.register(
-            UINib(nibName: HomeRecentWatchContainerCell.identifier, bundle: nil),
-            forCellWithReuseIdentifier: HomeRecentWatchContainerCell.identifier
+            UINib(nibName: HomeRankingItemCell.identifier, bundle: nil),
+            forCellWithReuseIdentifier: HomeRankingItemCell.identifier
+        )
+        
+        collectionView.register(
+            UINib(nibName: HomeRecentWatchItemCell.identifier, bundle: nil),
+            forCellWithReuseIdentifier: HomeRecentWatchItemCell.identifier
         )
         
         collectionView.register(
@@ -65,6 +71,185 @@ class HomeViewController: UIViewController {
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
             withReuseIdentifier: HomeFooterView.identifier
         )
+        
+        // collectionViewLayout 설정
+        collectionView.collectionViewLayout =
+        UICollectionViewCompositionalLayout(sectionProvider: { [weak self] section, _ in
+            self?.makeSection(section)
+        })
+    }
+    
+    private func makeSection(_ section: Int) -> NSCollectionLayoutSection? {
+        guard let section = HomeSection(rawValue: section) else { return nil }
+        
+        let itemSpace: CGFloat = 21
+        let inset: NSDirectionalEdgeInsets = .init(top: 0, leading: 21, bottom: 21, trailing: 21)
+        
+        switch section {
+        case .header:
+            return makeHeaderSection()
+        case .video:
+            return makeVideoSection(itemSpace, inset)
+        case .ranking:
+            return makeRankingSection(itemSpace, inset)
+        case .recentWatch:
+            return makeRecentWatchSection(itemSpace, inset)
+        case .recommend:
+            return makeRecommendSection(inset)
+        case .footer:
+            return makeFooterSection()
+        }
+    }
+    
+    private func makeHeaderSection() -> NSCollectionLayoutSection {
+        let layoutSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(HomeHeaderView.height)
+        )
+        
+        let item = NSCollectionLayoutItem(layoutSize: layoutSize)
+        
+        let group = NSCollectionLayoutGroup.vertical(
+            layoutSize: layoutSize,
+            subitems: [item]
+        )
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.boundarySupplementaryItems = [
+            NSCollectionLayoutBoundarySupplementaryItem(
+                layoutSize: layoutSize,
+                elementKind: UICollectionView.elementKindSectionHeader,
+                alignment: .top
+            )
+        ]
+        
+        return section
+    }
+    
+    private func makeVideoSection(_ itemSpace: CGFloat, _ inset: NSDirectionalEdgeInsets) -> NSCollectionLayoutSection {
+        let layoutSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(HomeVideoCell.height)
+        )
+        
+        let item = NSCollectionLayoutItem(layoutSize: layoutSize)
+        
+        let group = NSCollectionLayoutGroup.vertical(
+            layoutSize: layoutSize,
+            subitems: [item]
+        )
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = inset
+        section.interGroupSpacing = itemSpace
+        
+        return section
+    }
+    
+    private func makeRankingSection(_ itemSpace: CGFloat, _ inset: NSDirectionalEdgeInsets) -> NSCollectionLayoutSection {
+        let headerLayoutSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(HomeRankingHeaderView.height)
+        )
+        
+        let itemLayoutSize = NSCollectionLayoutSize(
+            widthDimension: .absolute(HomeRankingItemCell.size.width),
+            heightDimension: .absolute(HomeRankingItemCell.size.height)
+        )
+        
+        let item = NSCollectionLayoutItem(layoutSize: itemLayoutSize)
+        
+        let group = NSCollectionLayoutGroup.vertical(
+            layoutSize: .init(
+                widthDimension: .absolute(HomeRankingItemCell.size.width),
+                heightDimension: .absolute(265)
+            ),
+            subitems: [item]
+        )
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = itemSpace
+        section.contentInsets = inset
+        section.orthogonalScrollingBehavior = .continuous
+        section.boundarySupplementaryItems = [
+            NSCollectionLayoutBoundarySupplementaryItem(
+                layoutSize: headerLayoutSize,
+                elementKind: UICollectionView.elementKindSectionHeader,
+                alignment: .top
+            )
+        ]
+        
+        return section
+    }
+    
+    private func makeRecentWatchSection(_ itemSpace: CGFloat, _ inset: NSDirectionalEdgeInsets) -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .absolute(HomeRecentWatchItemCell.itemSize.width),
+            heightDimension: .absolute(HomeRecentWatchItemCell.itemSize.height)
+        )
+        
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: .init(
+                widthDimension: .absolute(HomeRecentWatchItemCell.itemSize.width),
+                heightDimension: .absolute(189)
+            ),
+            subitems: [item]
+        )
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = itemSpace
+        section.contentInsets = inset
+        section.orthogonalScrollingBehavior = .continuous
+
+        return section
+    }
+    
+    private func makeRecommendSection(_ inset: NSDirectionalEdgeInsets) -> NSCollectionLayoutSection {
+        let layoutSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(
+                HomeRecommendContainerCell.height(viewModel: self.homeViewModel.recommendViewModel)
+            )
+        )
+        
+        let item = NSCollectionLayoutItem(layoutSize: layoutSize)
+        
+        let group = NSCollectionLayoutGroup.vertical(
+            layoutSize: layoutSize,
+            subitems: [item]
+        )
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = inset
+        
+        return section
+    }
+    
+    private func makeFooterSection() -> NSCollectionLayoutSection {
+        let layoutSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(HomeHeaderView.height)
+        )
+        
+        let item = NSCollectionLayoutItem(layoutSize: layoutSize)
+        
+        let group = NSCollectionLayoutGroup.vertical(
+            layoutSize: layoutSize,
+            subitems: [item]
+        )
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.boundarySupplementaryItems = [
+            NSCollectionLayoutBoundarySupplementaryItem(
+                layoutSize: layoutSize,
+                elementKind: UICollectionView.elementKindSectionFooter,
+                alignment: .bottom
+            )
+        ]
+        
+        return section
     }
     
     private func bindViewModel() {
@@ -81,93 +266,13 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        guard let section = HomeSection(rawValue: section) else {
-            return .zero
-        }
-        
-        switch section {
-        case .header:
-            return CGSize(width: collectionView.frame.width, height: HomeHeaderView.height)
-        case .ranking, .video, .recentWatch, .recommend, .footer:
-            return .zero
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        guard let section = HomeSection(rawValue: section) else {
-            return .zero
-        }
-        
-        switch section {
-        case .footer:
-            return CGSize(width: collectionView.frame.width, height: HomeFooterView.height)
-        case .header, .ranking, .video, .recentWatch, .recommend:
-            return .zero
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        guard let section = HomeSection(rawValue: section) else {
-            return .zero
-        }
-        
-        return insetForSection(section)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        guard let section = HomeSection(rawValue: section) else {
-            return 0
-        }
-        
-        switch section {
-        case .header, .footer:
-            return 0
-        case .ranking, .video, .recentWatch, .recommend:
-            return 21
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        guard let section = HomeSection(rawValue: indexPath.section) else {
-            return .zero
-        }
-        
-        let inset = insetForSection(section)
-        let width = collectionView.frame.width - inset.left - inset.right
-        
-        switch section {
-        case .header, .footer:
-            return .zero
-        case .video:
-            return .init(width: width, height: HomeVideoCell.height)
-        case .ranking:
-            return .init(width: width, height: HomeRankingContainerCell.height)
-        case .recentWatch:
-            return .init(width: width, height: HomeRecentWatchContainerCell.height)
-        case .recommend:
-            return .init(width: width, height: HomeRecommendContainerCell.height(viewModel: homeViewModel.recommendViewModel))
-        }
-    }
-    
-    private func insetForSection(_ section: HomeSection) -> UIEdgeInsets {
-        switch section {
-        case .header, .footer:
-            return .zero
-        case .video, .ranking, .recentWatch, .recommend:
-            return .init(top: 0, left: 21, bottom: 21, right: 21)
-        }
-    }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let section = HomeSection(rawValue: indexPath.section) else {
-            return
-        }
+        guard let section = HomeSection(rawValue: indexPath.section) else { return }
         
         switch section {
-        case .header, .footer, .ranking, .recommend, .recentWatch:
+        case .header, .footer, .recommend:
             return
-        case .video:
+        case .video, .ranking, .recentWatch:
             presentVideoViewController()
         }
     }
@@ -187,9 +292,9 @@ extension HomeViewController: UICollectionViewDataSource {
         case .video:
             return homeViewModel.home?.videos.count ?? 0
         case .ranking:
-            return 1
+            return homeViewModel.home?.rankings.count ?? 0
         case .recentWatch:
-            return 1
+            return homeViewModel.home?.recents.count ?? 0
         case .recommend:
             return 1
         }
@@ -199,11 +304,18 @@ extension HomeViewController: UICollectionViewDataSource {
         guard let section = HomeSection(rawValue: indexPath.section) else {
             return .init()
         }
+        
         switch section {
         case .header:
             return collectionView.dequeueReusableSupplementaryView(
                 ofKind: kind,
                 withReuseIdentifier: HomeHeaderView.identifier,
+                for: indexPath
+            )
+        case .ranking:
+            return collectionView.dequeueReusableSupplementaryView(
+                ofKind: kind,
+                withReuseIdentifier: HomeRankingHeaderView.identifier,
                 for: indexPath
             )
         case .footer:
@@ -212,7 +324,7 @@ extension HomeViewController: UICollectionViewDataSource {
                 withReuseIdentifier: HomeFooterView.identifier,
                 for: indexPath
             )
-        case .ranking, .video, .recentWatch, .recommend:
+        case .video, .recentWatch, .recommend:
             return .init()
         }
     }
@@ -242,27 +354,25 @@ extension HomeViewController: UICollectionViewDataSource {
             return cell
         case .ranking:
             let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: HomeRankingContainerCell.identifier,
+                withReuseIdentifier: HomeRankingItemCell.identifier,
                 for: indexPath
             )
             
-            if let cell = cell as? HomeRankingContainerCell,
-               let datas = homeViewModel.home?.rankings {
-                cell.delegate = self
-                cell.setData(datas)
+            if let cell = cell as? HomeRankingItemCell,
+               let data = homeViewModel.home?.rankings[indexPath.row] {
+                cell.setData(data, rank: indexPath.row)
             }
             
             return cell
         case .recentWatch:
             let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: HomeRecentWatchContainerCell.identifier,
+                withReuseIdentifier: HomeRecentWatchItemCell.identifier,
                 for: indexPath
             )
             
-            if let cell = cell as? HomeRecentWatchContainerCell,
-               let datas = homeViewModel.home?.recents {
-                cell.delegate = self
-                cell.setData(datas)
+            if let cell = cell as? HomeRecentWatchItemCell,
+               let data = homeViewModel.home?.recents[indexPath.row] {
+                cell.setData(data)
             }
             
             return cell

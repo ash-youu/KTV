@@ -70,6 +70,8 @@
 		26AB11582C77A97A00EAC9B5 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AB11572C77A97A00EAC9B5 /* Favorite.swift */; };
 		26AB115B2C77B2E400EAC9B5 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AB115A2C77B2E400EAC9B5 /* FavoriteViewController.swift */; };
 		26AB115D2C77B2F000EAC9B5 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AB115C2C77B2F000EAC9B5 /* FavoriteViewModel.swift */; };
+		26B07ED32CA12D6800144102 /* HomeRankingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B07ED12CA12D6800144102 /* HomeRankingHeaderView.swift */; };
+		26B07ED42CA12D6800144102 /* HomeRankingHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26B07ED22CA12D6800144102 /* HomeRankingHeaderView.xib */; };
 		26B3C7AA2C5FC4AE0045A050 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26B3C7A92C5FC4AE0045A050 /* Color.xcassets */; };
 		26C108952C69FE5C0013821C /* HomeRankingContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C108932C69FE5C0013821C /* HomeRankingContainerCell.swift */; };
 		26C108962C69FE5C0013821C /* HomeRankingContainerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C108942C69FE5C0013821C /* HomeRankingContainerCell.xib */; };
@@ -149,6 +151,8 @@
 		26AB11572C77A97A00EAC9B5 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		26AB115A2C77B2E400EAC9B5 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		26AB115C2C77B2F000EAC9B5 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
+		26B07ED12CA12D6800144102 /* HomeRankingHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRankingHeaderView.swift; sourceTree = "<group>"; };
+		26B07ED22CA12D6800144102 /* HomeRankingHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeRankingHeaderView.xib; sourceTree = "<group>"; };
 		26B3C7A92C5FC4AE0045A050 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		26C108932C69FE5C0013821C /* HomeRankingContainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRankingContainerCell.swift; sourceTree = "<group>"; };
 		26C108942C69FE5C0013821C /* HomeRankingContainerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRankingContainerCell.xib; sourceTree = "<group>"; };
@@ -338,6 +342,8 @@
 				268513082C6672E8008141AC /* HomeRecommendContainerCell.xib */,
 				268513132C6673A9008141AC /* VideoListItemCell.swift */,
 				268513142C6673A9008141AC /* VideoListItemCell.xib */,
+				26B07ED12CA12D6800144102 /* HomeRankingHeaderView.swift */,
+				26B07ED22CA12D6800144102 /* HomeRankingHeaderView.xib */,
 				26C108932C69FE5C0013821C /* HomeRankingContainerCell.swift */,
 				26C108942C69FE5C0013821C /* HomeRankingContainerCell.xib */,
 				26C108972C6A023C0013821C /* HomeRankingItemCell.swift */,
@@ -450,6 +456,7 @@
 				268513122C667382008141AC /* HomeFooterView.xib in Resources */,
 				26C108A82C6CEEE60013821C /* HomeRecentWatchContainerCell.xib in Resources */,
 				266370E42C7F9F9F00B2F436 /* MoreTableViewCell.xib in Resources */,
+				26B07ED42CA12D6800144102 /* HomeRankingHeaderView.xib in Resources */,
 				2699BD842C6506F300CB3DF0 /* HomeVideoCell.xib in Resources */,
 				26AB11522C77A4DC00EAC9B5 /* BookmarkCell.xib in Resources */,
 				262EA5C32C55387B00162FC0 /* Main.storyboard in Resources */,
@@ -517,6 +524,7 @@
 				26975D7E2C6E1856009D91D9 /* Home.swift in Sources */,
 				26AB11542C77A4FB00EAC9B5 /* BookmarkViewController.swift in Sources */,
 				269A6DAB2C80EC9100EB91A6 /* PlayerView.swift in Sources */,
+				26B07ED32CA12D6800144102 /* HomeRankingHeaderView.swift in Sources */,
 				2699BD7C2C6505ED00CB3DF0 /* HomeViewController.swift in Sources */,
 				26AB114D2C77A2AC00EAC9B5 /* MyViewController.swift in Sources */,
 				269212092C8F553C008A9671 /* ChatSimulator.swift in Sources */,
