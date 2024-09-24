@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVKit
 
 class VideoViewController: UIViewController {
 
@@ -62,6 +63,9 @@ class VideoViewController: UIViewController {
         return dateFormatter
     }()
     
+    // PIP 모드 처리
+    private var pipController: AVPictureInPictureController?
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
@@ -83,6 +87,7 @@ class VideoViewController: UIViewController {
         setupRecommendTableView()
         bindViewModel()
         viewModel.request()
+        setupPIPController()
         
         chattingView.delegate = self
         
@@ -112,6 +117,19 @@ class VideoViewController: UIViewController {
         }
         
         super.viewWillTransition(to: size, with: coordinator)
+    }
+    
+    private func setupPIPController() {
+        guard AVPictureInPictureController.isPictureInPictureSupported(),
+              let playerLayer = playerView.avPlayerLayer else { return }
+        
+        let pipController = AVPictureInPictureController(playerLayer: playerLayer)
+        
+        if #available(iOS 14.2, *) {
+            pipController?.canStartPictureInPictureAutomaticallyFromInline = true
+        }
+        
+        self.pipController = pipController
     }
     
     private func isLandscape(size: CGSize) -> Bool {
