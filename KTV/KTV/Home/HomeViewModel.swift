@@ -16,10 +16,10 @@ import Foundation
     func requestData() {
         Task {
             do {
-//                home = try await DataLoader.load(url: URLDefines.home, for: Home.self)
-                let home = try DataLoader.load(json: "home", for: Home.self)
+                home = try await DataLoader.load(url: URLDefines.home, for: Home.self)
+//                let home = try DataLoader.load(json: "home", for: Home.self) - 실기기 테스트용 코드
                 self.home = home
-                recommendViewModel.recommends = home.recommends
+                recommendViewModel.recommends = home?.recommends
                 dataChanged?()
             } catch {
                 print("json parshing failed: \(error.localizedDescription)")

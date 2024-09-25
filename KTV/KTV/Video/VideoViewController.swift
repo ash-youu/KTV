@@ -9,7 +9,7 @@ import UIKit
 import AVKit
 
 class VideoViewController: UIViewController {
-
+    
     // MARK: - 제어 패널
     @IBOutlet weak var portraitControlPannel: UIView!
     @IBOutlet weak var playerView: PlayerView!
@@ -30,7 +30,7 @@ class VideoViewController: UIViewController {
     @IBOutlet weak var playCountLabel: UILabel!
     
     @IBOutlet weak var favoriteButton: UIButton!
-
+    
     @IBOutlet weak var channelThumbnailImageView: UIImageView!
     @IBOutlet weak var channelNameLabel: UILabel!
     
@@ -80,7 +80,7 @@ class VideoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         playerView.delegate = self
         seekbarView.delegate = self
         channelThumbnailImageView.layer.cornerRadius = 14
@@ -125,9 +125,7 @@ class VideoViewController: UIViewController {
         
         let pipController = AVPictureInPictureController(playerLayer: playerLayer)
         
-        if #available(iOS 14.2, *) {
-            pipController?.canStartPictureInPictureAutomaticallyFromInline = true
-        }
+        pipController?.canStartPictureInPictureAutomaticallyFromInline = true
         
         self.pipController = pipController
     }
@@ -206,7 +204,7 @@ extension VideoViewController {
     
     @IBAction func moreDidTap(_ sender: UIButton) {
         let vc = MoreViewController()
-        present(vc, animated: false)
+        present(vc, animated: true)
     }
     
     @IBAction func expandDidTap(_ sender: UIButton) {

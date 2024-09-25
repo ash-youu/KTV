@@ -18,12 +18,14 @@ class MoreViewController: UIViewController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
         modalPresentationStyle = .overFullScreen
+        modalTransitionStyle = .crossDissolve
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
         modalPresentationStyle = .overFullScreen
+        modalTransitionStyle = .crossDissolve
     }
     
     override func viewDidLoad() {
@@ -65,7 +67,7 @@ class MoreViewController: UIViewController {
     }
     
     @IBAction func closeDidTap(_ sender: UIButton) {
-        dismiss(animated: false)
+        dismiss(animated: true)
     }
 }
 

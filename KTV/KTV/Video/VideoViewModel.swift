@@ -14,8 +14,8 @@ import Foundation
     func request() {
         Task {
             do {
-//                let video = try await DataLoader.load(url: URLDefines.video, for: Video.self)
-                let video = try DataLoader.load(json: "video", for: Video.self)
+                let video = try await DataLoader.load(url: URLDefines.video, for: Video.self)
+//                let video = try DataLoader.load(json: "video", for: Video.self) - 실기기 테스트용 코드
                 self.video = video
                 self.dataChangeHandler?(video)
             } catch {
